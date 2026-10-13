@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Measure time spent in database queries, external calls, and application code before choosing any change.",
+    "Read prices from the system that controls price updates, not from a cache.",
+    "No. The assistant changed its earlier answer and dropped the Redis caching recommendation."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

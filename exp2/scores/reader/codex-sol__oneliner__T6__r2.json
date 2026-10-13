@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "No. The text says git branch deletion alone will free little space.",
+    "/srv/app/uploads/tmp, which uses 31 GB.",
+    "The server address and account, the definition of old branches, the branches needed for deployment or recovery, the temporary-file retention rule, and an approved maintenance time if needed."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

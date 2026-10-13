@@ -1,0 +1,148 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T4",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "full",
+    "B": "scoped",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Covers every point in short, plain sentences, keeps its own analysis in a separate section marked as not checked, and suggests libfaketime, which really changes the clock, to reproduce the bug."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Suggests freezegun to pin the clock and reproduce the failure, but freezegun returns a naive frozen time with no local offset, so it likely hides the bug (the notes say the test passed under freezegun).",
+          "Step 9 says to update the two failing tests no matter what Priya decides, outside the UTC branch of the decision."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Complete and careful, but the repeated 'possibly', the long 11-step flat list, and the freezegun reproduction plan make it weaker than the others."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Strong status block up front and good next steps with clear UTC and local-time branches, but the closing 'what I added' section repeats the doc, and the text is a bit choppy."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Step 1 expects freezegun with time frozen at 22:30 UTC to make the test fail, but freezegun removes the local-time offset, and the notes say the test passed under freezegun."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Reads the most naturally and adds a useful question about the production server timezone, but its main reproduction step likely will not reproduce the bug."
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "D",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 10619,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 3089,
+      "output_tokens_details": {
+        "thinking_tokens": 2280
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 10619,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3089,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 10619,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 10619
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1468488
+  }
+}

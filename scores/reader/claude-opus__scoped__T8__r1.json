@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Trace the slow requests to find which call takes the time, before adding any cache.",
+    "Cache only slow-changing data like name, description, images, and specs. Read price live from the source of truth on every request, and make checkout always read the live price.",
+    "No. It changed its answer. It dropped the earlier advice to add a 10 minute price cache."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

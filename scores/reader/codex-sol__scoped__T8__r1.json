@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Measure where the 900 ms is spent: database queries, application work, and downstream calls. Do not add the price cache yet.",
+    "The text does not say how prices should be handled if cached. It only says prices need a separate correctness decision and verification before charging.",
+    "No. The assistant changed its earlier answer, withdrawing the 10-minute TTL recommendation and the prediction of p95 below 200 ms."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

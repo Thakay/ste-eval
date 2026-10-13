@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Measure where slow requests spend their time.",
+    "Only with clear freshness requirements and evidence the design meets them during failures.",
+    "No. It changed its answer and said not to add the proposed Redis cache for prices."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

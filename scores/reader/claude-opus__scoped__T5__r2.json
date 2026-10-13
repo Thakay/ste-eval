@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "Inside the api container, localhost points to the api container itself, not your machine or the db container.",
+    "DATABASE_URL should use the host name db, since Compose gives each service a DNS name on the shared network.",
+    "No. depends_on only waits for the db container to start, not for Postgres to accept connections; a healthcheck with condition: service_healthy is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

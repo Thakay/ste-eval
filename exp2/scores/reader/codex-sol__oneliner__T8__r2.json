@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "First, measure database query time and time used by external services.",
+    "Specify price accuracy requirements first, then test price changes, cache failures, and lost update messages against them.",
+    "No. It changed its answer to not add Redis yet."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T3",
+  "rep": 3,
+  "answers": [
+    "No. The text says do not move to Postgres now; plan the move before adding a second app server.",
+    "Adding a second app server makes the Postgres move necessary, because two app servers cannot safely share SQLite.",
+    "You must operate one more service, including its upgrades, settings, backups, and monitoring."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

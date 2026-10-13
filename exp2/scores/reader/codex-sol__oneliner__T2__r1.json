@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "Yes, no. A rebase creates new commits with new commit IDs, so the hashes change.",
+    "Do not rebase when other developers have used your commits as the basis for their work, or when your team must keep the original commit history.",
+    "Run `git rebase --abort`. It cancels the operation."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

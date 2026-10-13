@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "No. Branches are 41-byte pointers, so deleting them frees almost no space; expect a few MB at most.",
+    "uploads/tmp (31G) is the main target, with Docker (48G) probably the next big win.",
+    "NOT STATED"
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

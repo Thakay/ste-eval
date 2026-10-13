@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "No. Branches are tiny pointers, so deleting them frees almost no space; the text says a few MB at most.",
+    "Docker, using 48G, is the bigger target. The text says it will not touch Docker without approval, and that clearing uploads/tmp frees up to 31G.",
+    "Access (SSH with sudo, or pasted output), tmp rules, branch rules, repo role, Docker scope, and timing. The user must give a go before deletion."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

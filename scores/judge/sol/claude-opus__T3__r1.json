@@ -1,0 +1,127 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "lite",
+    "C": "base",
+    "D": "full"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "pg_dump is not a physical base backup suitable for recovery by replaying archived WAL.",
+          "Managed Postgres is not required for redundancy; self-hosted database failover is also possible."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "The strongest balance of recommendation, measurement, restore testing, and durability caveats, though it never explicitly explains how Django eases migration."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [
+          "Postgres will take 1 to 2 GB of RAM on this VPS."
+        ],
+        "errors": [
+          "Managed Postgres does not universally include point-in-time recovery and failover.",
+          "Two app servers can improve availability even when the database remains a single point of failure."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 2,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "The decision is clear, but unsupported resource sizing and tuning without durability caveats make the operational advice less reliable."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [
+          "The current workload has at least 10x write headroom."
+        ],
+        "errors": [
+          "sqlsequencereset prints SQL; running the command alone does not reset sequences."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Useful migration rehearsal and evidence gathering are weakened by unmeasured capacity claims and an omitted durability caveat for synchronous=NORMAL."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Postgres schema changes commonly acquire locks that can block other operations, even when the changes execute quickly.",
+          "Moving the database to a separate host does not by itself remove its single point of failure.",
+          "sqlsequencereset prints SQL; running the command alone does not reset sequences."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "The clearest presentation includes practical triggers and a durability caveat, but overstates migration locking benefits and judges the contractor before obtaining evidence."
+      }
+    },
+    "ranking": [
+      "A",
+      "D",
+      "C",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 15022,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2277,
+      "reasoning_output_tokens": 1552
+    }
+  }
+}

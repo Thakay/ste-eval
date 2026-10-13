@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "No. Keep SQLite if production is healthy, and plan a tested Postgres migration before adding a second app server.",
+    "Persistent lock failures or write queues that remain after fixing transaction boundaries.",
+    "It requires service management, tuning, upgrades, and database-aware backups."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

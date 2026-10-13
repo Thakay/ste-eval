@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Profile first: trace the slow requests and find the dominant cost before adding any cache.",
+    "Never cache prices with a TTL. Cache slow-changing data only, and fetch price and stock live or invalidate on price-change events.",
+    "No. The assistant changed its earlier answer, admitting it was overconfident and unsupported."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

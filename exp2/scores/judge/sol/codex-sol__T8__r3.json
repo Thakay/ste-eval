@@ -1,0 +1,65 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T8",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clearly retracts the unsupported recommendation and separates prices from cacheable content, but gives no concrete fixes that avoid caching."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Makes a clear decision with useful caveats about invalidation and checkout checks, but omits concrete fixes that avoid caching."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 11785,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 334,
+      "reasoning_output_tokens": 154
+    }
+  }
+}

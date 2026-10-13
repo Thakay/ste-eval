@@ -1,0 +1,74 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The directory listing needs sudo because /var/backups/postgres is accessible only to root.",
+          "Restore-test cleanup leaves anonymous database volumes behind because docker rm omits -v."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "A thorough, well-explained procedure with useful failure handling, but a few commands need correction."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "A Docker container without published ports is unavailable from the network; the host and other containers can still reach it."
+        ],
+        "errors": [
+          "After the suggested restore into app_restored, subsequent validation commands still query app."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "The complete commands and explicit verification steps make this easy to follow, though the network claim and alternate-database validation need correction."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 16114,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1107,
+      "reasoning_output_tokens": 853
+    }
+  }
+}

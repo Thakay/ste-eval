@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "No. Rebased commits are new commits with different hashes, because their parent changed.",
+    "When the branch is shared, the team prefers merge commits, a PR is under review, or you feel nervous.",
+    "Run git rebase --abort, which restores the branch exactly as it was before you started."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

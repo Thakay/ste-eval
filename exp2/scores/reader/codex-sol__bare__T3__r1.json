@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "NOT STATED",
+    "NOT STATED",
+    "Adds connection management, resource tuning, upgrades, and database administration."
+  ],
+  "scores": [
+    0,
+    0,
+    1
+  ]
+}

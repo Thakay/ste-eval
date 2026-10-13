@@ -1,0 +1,76 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Age-based retention does not guarantee exactly seven backups when runs are missed or additional backups are created.",
+          "Using .Config.Image selects an image reference that may have changed, so it does not guarantee the exact production image."
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "The complete procedure and isolated restore test are easy to follow, although some guarantees are overstated."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Age-based retention does not guarantee that the seven most recent nightly backups are always retained.",
+          "Using .Config.Image does not guarantee the exact production image if its tag has changed.",
+          "The restore test skips privileges but preserves ownership, so objects owned by absent roles can cause failure.",
+          "The automated test prints restored row counts without comparing them to production and leaves the freshness query disabled, so successful execution does not establish all stated passing conditions.",
+          "Omitting published ports does not isolate the test container from the host or other containers on its bridge network."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "The automation is useful and well explained, but the restore test has ownership and validation gaps."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 17160,
+      "cached_input_tokens": 16512,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 484
+    }
+  }
+}

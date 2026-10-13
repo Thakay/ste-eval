@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says do not move to Postgres now; stay on SQLite and move before adding a second app server.",
+    "Adding a second app server makes Postgres necessary. Other triggers include persistent lock errors, rising write latency, or needed Postgres features.",
+    "Postgres needs more operations work, such as backups, upgrades, vacuum, and connection limits, plus possible managed-service monthly costs."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

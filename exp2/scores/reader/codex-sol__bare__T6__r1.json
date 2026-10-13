@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "No. Deleting Git branches usually saves very little space, since branch references are tiny.",
+    "The 31G temporary-upload directory is the main target for freeing space.",
+    "Server connection details, approval for read-only checks, temporary-file policy, branch policy, and deletion approval."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

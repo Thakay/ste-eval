@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Trace the slow requests and find the step that takes the time, before adding any cache.",
+    "Cache only rarely changing fields like name, description, images, and specs. Read the price from the source of truth on every request.",
+    "No. It changed its answer, saying not to add a cache yet."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

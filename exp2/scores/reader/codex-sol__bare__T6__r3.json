@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 3,
+  "answers": [
+    "No. Deleting branches usually frees negligible space, since branches are small references and their objects can remain.",
+    "/srv/app/uploads/tmp, which uses 31 GB on the root filesystem.",
+    "Server access, temp-file policy (disposability, backups, cutoff), pausable upload workers, and an approved branch deletion list."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

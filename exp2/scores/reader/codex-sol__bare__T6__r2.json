@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not really. Branches are small references, so deleting them usually frees negligible space, since their commits may stay retained.",
+    "/srv/app/uploads/tmp, which contains 31G.",
+    "The production hostname and approved access method, temporary-file retention rules and worker coordination, branch rules (what old means, integration and protected branches), and explicit go-ahead for read-only checks and cleanup."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

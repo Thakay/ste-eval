@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "A script at /usr/local/sbin/backup-app-postgres runs pg_dump inside the app-db container and writes the dump file.",
+    "A find command deletes files matching app-*.dump in the backup directory with -mtime +6, run by the script after each successful backup.",
+    "In a separate container, using the same image as app-db, with separate storage and no network access."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

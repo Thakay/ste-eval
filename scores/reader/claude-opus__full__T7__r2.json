@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "Response contains no users. Under the change, res.json serializes the unawaited Promise as {}, so users is empty.",
+    "The size cap of 100, Math.min(..., 100), was removed, so clients can request huge page sizes.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

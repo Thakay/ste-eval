@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "The response shows every user as {} because the query lacks await, so users is a Promise that serializes as an empty object.",
+    "The page size cap, Math.min(..., 100), was removed, so clients can request arbitrarily large page sizes.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

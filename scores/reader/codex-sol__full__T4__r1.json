@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "NOT STATED",
+    "Priya must answer the required timezone question (customer local time or UTC) before anything is merged.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

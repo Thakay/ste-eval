@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Find the cause of the 900 ms latency first, using traces or a profiler on slow requests.",
+    "Do not cache the price. Get price and stock from the source of truth on each request, and checkout must always read the price from the source of truth.",
+    "No. It changed its earlier answer, admitting it was too confident and had no data for its claim."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

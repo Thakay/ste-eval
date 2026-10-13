@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "Users is a Promise, not an array, so res.json sends \"users\": {} for every request, because the query lacks await.",
+    "The upper limit of 100 on size was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

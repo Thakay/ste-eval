@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "bare",
+  "task": "T3",
+  "type": "tradeoff",
+  "rep": 1,
+  "seconds": 65.3,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10598,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1365,
+    "reasoning_output_tokens": 815
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T2",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clearly explains replay and conflict recovery, but narrows the shared-history warning to dependent work and omits force-push guidance."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "The diagrams and explicit warning about pulled commits make this stronger, but it does not explain pushing a rebased branch with --force-with-lease."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 11843,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 607,
+      "reasoning_output_tokens": 420
+    }
+  }
+}

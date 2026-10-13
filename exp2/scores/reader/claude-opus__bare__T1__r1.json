@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "The pg_dump command, run with docker exec inside the app-db container in custom format (-Fc), writes the backup file.",
+    "A find command deletes backup files older than 7 days (-mtime +6) after each successful backup.",
+    "In a throwaway container that uses the same image as production, run by pg-restore-test.sh."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

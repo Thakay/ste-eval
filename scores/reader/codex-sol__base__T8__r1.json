@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Trace slow requests first, then fix the measured bottleneck.",
+    "Keep prices on an authoritative read path and validate them again before customers confirm payment.",
+    "No. It changed its answer and rejected its original proposal to cache product responses containing prices."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

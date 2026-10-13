@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "bare",
+  "task": "T6",
+  "type": "warning",
+  "rep": 2,
+  "seconds": 58.2,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10671,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1352,
+    "reasoning_output_tokens": 1034
+  }
+}

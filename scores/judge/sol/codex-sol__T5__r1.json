@@ -1,0 +1,107 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T5",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "full",
+    "B": "base",
+    "C": "lite",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Gives a correct configuration and a command to try it, but does not explain why local development works."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Explains the container fix and recovery advice clearly, but lacks verification steps and an explicit explanation of host database access."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Explains the host and container distinction well and covers readiness and recovery, but gives no verification step."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Provides the most complete explanation and runnable fix, though stating what successful startup should show would strengthen verification."
+      }
+    },
+    "ranking": [
+      "D",
+      "C",
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12530,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1087,
+      "reasoning_output_tokens": 750
+    }
+  }
+}

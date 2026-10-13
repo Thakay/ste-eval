@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "The recommendation and migration triggers are clear, but SQLite backup guidance is generic and Django migration effort is omitted."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Provides practical monitoring, backup, and migration guidance, but does not explain how Django eases migration while data transfer and testing still cost time."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12199,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 449,
+      "reasoning_output_tokens": 263
+    }
+  }
+}

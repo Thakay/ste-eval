@@ -1,0 +1,75 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T4",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Claims test_invoice_due_dates passes after the UTC-aware change.",
+          "Claims nothing has been merged or put into review."
+        ],
+        "errors": [
+          "Claims two frozen-time checks confirm the failure window and root cause.",
+          "Later instructions assume a UTC+2 offset exists despite initially presenting it as speculation."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 3,
+        "overall": 6,
+        "note": "The handoff covers the key facts, but unsupported results and overconfident diagnostic steps could mislead the next agent."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "The handoff preserves the evidence, uncertainty, local branch state, and merge blocker clearly, although its phrasing is somewhat mechanical."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13366,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 516
+    }
+  }
+}

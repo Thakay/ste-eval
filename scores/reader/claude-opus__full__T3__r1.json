@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says do not migrate now because of load; migrate as a separate calm project before the second app server arrives.",
+    "A second app server (a firm date for it) makes the move necessary, since SQLite cannot safely be shared across machines.",
+    "Running Postgres means operating a server to tune, upgrade, back up, and monitor, or paying extra for managed service."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T1",
+  "rep": 3,
+  "answers": [
+    "The script runs pg_dump inside the app-db container with --format=custom and writes the output to a .part file, which is then renamed to .dump.",
+    "A find command deletes files matching app_*.dump in the backup directory whose age is 7 days or more (-mtime +6), after a successful backup.",
+    "On a separate test container (app-db-restore-test) started from the same image as app-db, with no published port, not on the production database."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

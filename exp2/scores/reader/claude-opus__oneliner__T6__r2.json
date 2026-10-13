@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "No. The text says removing git branches gives almost no disk space.",
+    "Docker, at 48G, is the largest identified item. The 109G in other directories is not yet located.",
+    "Approval per step, plus writing process, safe file age, backup status, old-branch definition, Docker tags, timing, sudo access."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

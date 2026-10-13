@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "Users is a Promise, not the data. res.json serializes it as {}, so every response shows \"users\": {}, because the await was dropped.",
+    "The size cap of 100 was removed. A client can now request size=1000000 and load the whole table in one call.",
+    "Request changes. Two blocking bugs: the missing await and the removed size cap. The API contract change also needs an answer."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

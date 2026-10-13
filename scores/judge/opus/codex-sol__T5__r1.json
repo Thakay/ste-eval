@@ -1,0 +1,135 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T5",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "base",
+    "B": "full",
+    "C": "lite",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Clear diagnosis and a working fix, but it does not explain why npm run dev works or how to verify, and pg_isready without -h can report ready during Postgres init."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clean, robust config with a rerun command, but it skips why the host run works and gives no advice on connection retries."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Covers the host versus container contrast, the race, and the 127.0.0.1 health check detail well, but gives no command to apply or verify the fix."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Most complete and easy to act on, with numbered steps, a correct robust health check, and the npm run dev explanation; it only lacks an explicit check that the fix worked."
+      }
+    },
+    "ranking": [
+      "D",
+      "C",
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6325,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1602,
+      "output_tokens_details": {
+        "thinking_tokens": 1004
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6325,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1602,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 6325,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6325
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.08275679999999999
+  }
+}

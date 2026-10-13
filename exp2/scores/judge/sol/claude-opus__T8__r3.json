@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T8",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Authoritative checkout pricing does not reduce stale displayed prices to a minor UX issue or eliminate possible refunds and pricing disputes."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Thoroughly corrects the earlier advice and explains the tradeoffs, but overstates how much checkout validation resolves stale displayed prices."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Gives a clear decision first and practical next steps, though its suggested explanation for two hours of staleness overlooks a long configured TTL."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12289,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 601
+    }
+  }
+}

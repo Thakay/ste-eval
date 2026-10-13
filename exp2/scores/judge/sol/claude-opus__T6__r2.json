@@ -1,0 +1,75 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T6",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [
+          "Claims it is running locally in WSL without supporting information."
+        ],
+        "errors": [
+          "Treats app downtime from a Docker restart as certain; this depends on configuration, including live restore.",
+          "Recommends directly truncating Docker-managed logs, which can interfere with Docker's logging."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Provides a practical investigation and cleanup plan, but does not clearly state that the proposed file deletions are irreversible."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Subtracting du totals from df usage does not establish that exactly 109G is in other directories.",
+          "git branch -vv shows upstream tracking information, but does not reliably identify all branches lacking remote copies or all unpushed commits."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clearly explains the deletion risks and requires approval for each removal, though some wording is stiff and two diagnostic claims are overstated."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13354,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 796,
+      "reasoning_output_tokens": 516
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "scoped",
+    "C": "full",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "The recommendation is sound and has a clear measurement plan, but it never mentions Django's role in the migration, and its reason for the multi-server problem is thin and choppy."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "It explains the second app server trigger best and gives a useful writer-time worked example, but its backup advice is generic and not specific to SQLite."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "It covers every key point in plain, concrete steps, including live-safe SQLite backups and the testing still needed for a Django migration."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 3,
+        "overall": 8,
+        "note": "It has strong technical depth (select_for_update being a no-op on SQLite, WAL-aware backups, tail latency), but it is denser for ESL readers and does not say Django eases the migration."
+      }
+    },
+    "ranking": [
+      "C",
+      "D",
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7807,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1899,
+      "output_tokens_details": {
+        "thinking_tokens": 1277
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7807,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1899,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 7807,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7807
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1005528
+  }
+}

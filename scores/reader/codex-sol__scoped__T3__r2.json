@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "NOT STATED",
+    "NOT STATED",
+    "Postgres adds a service, connection management, upgrades, and memory tuning."
+  ],
+  "scores": [
+    0,
+    0,
+    1
+  ]
+}

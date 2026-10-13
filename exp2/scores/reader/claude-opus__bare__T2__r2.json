@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No, the commit hashes change. Rebased commits get new hashes, A' B' C', even though they keep the same changes and messages.",
+    "NOT STATED",
+    "NOT STATED"
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

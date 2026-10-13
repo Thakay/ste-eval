@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Thorough and technically sound, but the restore test requires manual setup and its readiness loop has no timeout."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Complete, directly runnable steps include an automated restore test with a readiness timeout, failure checks, and cleanup."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 14899,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 620,
+      "reasoning_output_tokens": 441
+    }
+  }
+}

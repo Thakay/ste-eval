@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not directly. Branches are tiny pointers, so removing them frees little space until git gc runs and old commits are dropped.",
+    "The directory /srv/app/uploads/tmp (31G), though /var/lib/docker (48G) is also large.",
+    "Access to the server, the main and deployed branch names, a decision on unmerged branches, the writing process, an age limit, backup status, and a low-load time."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

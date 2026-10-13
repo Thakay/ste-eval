@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T6",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Clear approval and retention steps, but it omits Docker investigation, other space users, and an explicit warning that deletion cannot be undone."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Gives a practical cleanup sequence with useful filesystem and application safeguards, but lacks Docker inspection and prune steps, checks for other space users, and an explicit irreversible-deletion warning."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 11856,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 498,
+      "reasoning_output_tokens": 299
+    }
+  }
+}

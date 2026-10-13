@@ -1,0 +1,126 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "full",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "Claims silent backup failures are the most common way to lose data without supporting evidence."
+        ],
+        "errors": [
+          "A restored table with zero rows does not necessarily indicate failure.",
+          "Table counts need not match current production if schema changes occurred after the backup."
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Complete and executable, with clear failure handling, though its restore validation rules are too absolute."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Table lists need not match current production if schema changes occurred after the backup."
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "The strongest overall guide, with usable commands, explicit permissions, failure logging, and a practical isolated restore test."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "Claims the test container has no volume, although the official Postgres 17 image creates an anonymous data volume."
+        ],
+        "errors": [
+          "Cleanup omits docker rm -v, leaving the test container's anonymous data volume behind."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clear and mostly usable, but its incorrect volume explanation leads to incomplete cleanup after each restore test."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore commands run without root access even though the backup directory and files are root-only, so selecting and reading the dump fails.",
+          "Default pg_restore also returns a nonzero status when errors occur; --exit-on-error makes it stop at the first error.",
+          "Table counts need not match current production after schema changes, and row counts can legitimately be equal."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "The backup setup is solid, but the missing privilege step prevents the restore test from working as written."
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 17075,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1730,
+      "reasoning_output_tokens": 1034
+    }
+  }
+}

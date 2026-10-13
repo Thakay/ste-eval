@@ -1,0 +1,70 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T2",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "During rebase, 'ours' includes main plus any commits already replayed, not just main."
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "A thorough, practical explanation with useful workflow caveats, though its description of 'ours' is incomplete."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Conflicts are not limited to changes on the same lines, and identical changes to the same lines may merge cleanly.",
+          "--force-with-lease checks the expected remote state; it can allow overwriting another person's commits if those commits have already been fetched."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "The sequence is easy to follow, but absolute safety claims and the loud warning weaken an otherwise useful explanation."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13241,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 646,
+      "reasoning_output_tokens": 400
+    }
+  }
+}

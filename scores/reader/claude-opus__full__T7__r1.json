@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "The response returns an empty users value, because the missing await makes users a Promise, which res.json serializes as {}.",
+    "The Math.min(..., 100) cap on size was removed, so callers can request unlimited rows in one query.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

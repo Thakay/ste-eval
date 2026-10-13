@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "No, the fix branch fix/invoice-tz has not been pushed.",
+    "Priya, the billing owner, must answer whether due dates should follow customer local time or UTC. Nothing merges until then.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

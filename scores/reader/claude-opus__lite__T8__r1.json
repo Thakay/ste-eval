@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Profile the endpoint first and find the slowest span in the p95 requests, then fix that cause at the source.",
+    "Do not rely on the cache for price. Delete the cache key on every price write, and have checkout re-read the price from the database.",
+    "No. It changed its earlier answer and told the team not to add the cache yet."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

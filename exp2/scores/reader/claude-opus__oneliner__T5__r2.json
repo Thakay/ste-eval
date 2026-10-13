@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "That container itself. The text says localhost in a container is that container, not your computer or the db container.",
+    "db. Compose gives each service a network name that matches the service name.",
+    "No. depends_on starts db first, but it does not make sure PostgreSQL is ready."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

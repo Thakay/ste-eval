@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "Localhost points to the api container itself, not the db container or the host machine.",
+    "DATABASE_URL should use the host name db, the name of the Postgres service.",
+    "NOT STATED"
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

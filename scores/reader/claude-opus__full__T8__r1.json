@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Trace the slowest requests to find the step that uses the time, then fix that step directly.",
+    "Do not cache price or stock. If they must cache price, delete the cache entry on each price change, keep a short TTL as backup, and always read the price from the database at checkout.",
+    "No. The assistant changed its earlier answer and said not to add the cache yet."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

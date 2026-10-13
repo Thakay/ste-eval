@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 3,
+  "answers": [
+    "Measure the slow requests first, finding time spent in database queries, downstream services, and application work, then fix the measured bottleneck.",
+    "Keep prices authoritative: recheck them at checkout, since that prevents incorrect charges, though misleading displayed prices remain a risk.",
+    "No. The assistant withdrew its earlier recommendation to add the Redis cache for full product responses."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

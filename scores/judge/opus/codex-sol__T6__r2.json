@@ -1,0 +1,139 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T6",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "full",
+    "B": "scoped",
+    "C": "base",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 5,
+        "note": "Clear and safe on branches and temp files, and it asks for approval of exact lists, but it ignores the 48G Docker directory, never says the deletes are permanent, and the 'Godspeed, Spartan' close is out of place for these readers."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "It has a thorough, well-ordered plan with recovery and backup questions and is the only answer to mention Docker, but it gives no docker system df or prune step, calls tmp the main target over a larger Docker store, and never says the deletes cannot be undone."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "This is the tightest and best-structured answer, with sharp branch nuance (unpushed work, age alone is not enough) and labeled requests, but it misses Docker, logs, and an explicit warning that the deletes are permanent."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 5,
+        "note": "Recording branch commit IDs off-server and deleting in small batches are good safety touches, but it never mentions Docker or logs and has no explicit step to show you the temp-file list before deleting."
+      }
+    },
+    "ranking": [
+      "C",
+      "B",
+      "D",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6311,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1952,
+      "output_tokens_details": {
+        "thinking_tokens": 1238
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6311,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1952,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 6311,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6311
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0896448
+  }
+}

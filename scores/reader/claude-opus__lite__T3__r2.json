@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "No. The text says do not migrate now, because SQLite in WAL mode handles the current load well.",
+    "A second app server going live. Two hosts cannot share one SQLite file, so Postgres must come before that.",
+    "Many writers with row-level locks is a gain; the cost is a server to tune, back up, and upgrade, using about 1 to 2 GB of RAM."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

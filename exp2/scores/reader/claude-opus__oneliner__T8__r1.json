@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Find the cause of the latency first, using a trace tool or query logs for slow requests.",
+    "Read the price from the database at checkout; if caching, remove the entry on price change and set a short TTL, e.g. 30 seconds.",
+    "No. The assistant changed its earlier answer, saying it had no data for \"well under 200 ms\" and advising against adding the cache now."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

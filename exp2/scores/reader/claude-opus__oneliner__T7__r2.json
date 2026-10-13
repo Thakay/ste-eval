@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "Each response contains \"users\": {} because the missing await makes users a Promise, which serializes as an empty object.",
+    "The size limit removed was Math.min(..., 100), the cap on the size parameter.",
+    "Request changes. Fix items 1, 2, and 3 before merging."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

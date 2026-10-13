@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Replayed commits normally get new commit IDs because their history has changed.",
+    "Avoid rebase when others already use those commits, when you must preserve the original branch and merge history, or when you have uncommitted work.",
+    "Run git rebase --abort to return to the state before the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

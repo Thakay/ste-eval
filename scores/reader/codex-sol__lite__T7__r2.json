@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "The response sends a `users` value that is a Promise, not the user records, because `await` on `findMany` was removed.",
+    "The 100-user cap on result set size was removed, so clients can request arbitrarily large result sets.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

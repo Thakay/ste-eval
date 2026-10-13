@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "No. Rebase replays commits and creates new commit hashes, so the IDs change.",
+    "Avoid rebase when other developers use your branch or base work on its commits, unless everyone agrees to rewrite history. Prefer merge when original history is required.",
+    "Run git rebase --abort to cancel the rebase and restore the original branch state."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

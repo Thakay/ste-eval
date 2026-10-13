@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "Only the users array is returned, and it is a Promise, not data. Missing await makes res.json serialize it as {}, so no users appear.",
+    "The page-size cap was removed. The old Math.min(..., 100) guard is gone, so a huge size pulls the whole table.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

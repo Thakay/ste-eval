@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "bare",
+  "task": "T8",
+  "type": "discussion",
+  "rep": 1,
+  "seconds": 42.5,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10625,
+    "cached_input_tokens": 8832,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 955,
+    "reasoning_output_tokens": 722
+  }
+}

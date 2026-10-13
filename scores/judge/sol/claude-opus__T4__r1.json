@@ -1,0 +1,145 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T4",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "lite",
+    "C": "full",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Identifies the note author as Kay.",
+          "Claims the branch exists exclusively on the author's laptop and is inaccessible to the next agent.",
+          "Describes the failure window as starting exactly at Berlin midnight.",
+          "Claims nobody checked CI components for Berlin time."
+        ],
+        "errors": [
+          "Tells the next agent to recreate the change if the branch is absent remotely, despite the existing local branch.",
+          "Claims three fixed-time probes can confirm the failure window in minutes; they only sample three times.",
+          "Unconditionally recommends timezone-aware datetime expectations before the required due-date semantics are established."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "Preserves the core handoff facts but adds unsupported access claims and some unreliable next steps."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Identifies the note author as Kay.",
+          "Claims the branch exists exclusively on the author's laptop and cannot be reached by the next agent."
+        ],
+        "errors": [
+          "Treats a one-hour shift after the Berlin DST change as confirmation of the theory, although it would only provide supporting evidence.",
+          "Presents evening scheduling or a wider window as the only explanations for the approximate failure rate, overlooking sampling uncertainty and other causes."
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Provides a useful conditional action plan, but its extra timing analysis is more conclusive than the evidence supports."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Identifies the note author as Kay.",
+          "Claims the branch exists exclusively on the author's laptop and cannot be seen by the next agent."
+        ],
+        "errors": [
+          "Predicts a specific post-DST failure window from an unconfirmed timing hypothesis.",
+          "Presents evening scheduling or a wider window as the only explanations for the approximate failure rate."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clearly separates the recorded facts, merge blocker, and unchecked leads, though some timing deductions remain too strong."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Identifies the note author as Kay.",
+          "Claims the branch exists exclusively on the author's laptop and nobody else can see it.",
+          "States that the due date is off by one day when local and UTC dates differ.",
+          "States that a production bug is established, although the notes describe a possible production risk."
+        ],
+        "errors": [
+          "Treats Berlin time entering CI as something to find rather than a hypothesis to test.",
+          "Predicts a definite DST shift despite the unconfirmed cause and failure window.",
+          "Makes regression-test planning depend on an unverified expectation that 22:30 UTC fails and 21:30 UTC passes."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 2,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "Offers concrete steps and a visible merge blocker, but turns several uncertain observations into asserted causes and outcomes."
+      }
+    },
+    "ranking": [
+      "C",
+      "B",
+      "A",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 15367,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1963,
+      "reasoning_output_tokens": 1034
+    }
+  }
+}

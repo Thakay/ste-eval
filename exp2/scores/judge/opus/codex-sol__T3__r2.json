@@ -1,0 +1,95 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T3",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Clear decision and simple wording, but it never says 50 writes per second is fine, gives only a generic backup step, and skips how Django helps or hinders the migration."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Covers every key point with useful SQLite details (checkpoint starvation, permissive typing, rollback plan) and a clear stance on the contractor's claim, though it is a bit denser for second-language readers."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5978,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1035,
+      "output_tokens_details": {
+        "thinking_tokens": 698
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5978,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1035,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5978,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5978
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0686408
+  }
+}

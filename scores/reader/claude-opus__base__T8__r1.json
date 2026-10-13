@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Profile the endpoint with tracing or the slow query log to find the real bottleneck before adding any cache.",
+    "Cache only slow-changing product data, never price on a timer alone. If caching, invalidate on every price change plus a short TTL backstop, or read price live.",
+    "No. The assistant changed its earlier answer and said it was overconfident, so it withdrew the caching recommendation."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

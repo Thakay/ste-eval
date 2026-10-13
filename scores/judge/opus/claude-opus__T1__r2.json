@@ -1,0 +1,147 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "full",
+    "B": "scoped",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore test prints 'Row counts differ' but still exits 0, so cron or an alert cannot detect a failed comparison",
+          "Restore test has no --no-owner, so it fails if extra roles exist (the answer does mention this)"
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Complete and correct with an automated weekly restore test and a safe disaster-restore command, though the row-count mismatch does not fail the script."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Very clear numbered steps with a pg_restore --list check before keeping a dump and good warnings, but the restore test is manual only and there is no disaster-restore step."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore step has no --exit-on-error, so errors can scroll by and the reader must judge them by hand",
+          "Test container hard-codes postgres:17 and relies on the reader to swap in the image from step 2"
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Solid systemd-timer version with Persistent=true and a good data-loss-window note, but the manual restore test is less strict than the others."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Disaster restore uses --clean with --exit-on-error but no --single-transaction, so a failure can leave the live database half-restored"
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Leads with the decision and the biggest gap, has an automated restore test that exits nonzero on failure, and uses count-based retention with a clear reason, though the text is a bit dense for ESL readers."
+      }
+    },
+    "ranking": [
+      "D",
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 14050,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 2296,
+      "output_tokens_details": {
+        "thinking_tokens": 1483
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 14050,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2296,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 14050,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 14050
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1584368
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "No, rebase gives every rebased commit a new hash because each one gets a new parent.",
+    "Do not rebase commits other people already have, shared or public branches like main, reviews in progress, or when team rules require merges.",
+    "Run git rebase --abort to stop and return the branch to its state before the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

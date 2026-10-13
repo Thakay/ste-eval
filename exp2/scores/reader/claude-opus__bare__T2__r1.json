@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "No. Rebase replays commits onto a new base, so each rewritten commit gets a new hash, while the originals remain only in git reflog.",
+    "Don't rebase shared history such as main, commits others have built on, or when you need a record of when work was integrated. Use merge there.",
+    "Run git rebase --abort to return to the state before the rebase. If it already finished, use git reflog to find the old hash, then git reset --hard to it."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

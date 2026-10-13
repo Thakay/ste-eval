@@ -1,0 +1,135 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T2",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "scoped",
+    "C": "full",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clear, correct and covers every checklist point in simple English, but it misses the stale local main pitfall, and the short sentences plus the roleplay sign-off feel a bit stiff."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Very actionable: a safe step-by-step workflow (fetch, rebase origin/main, continue, force-with-lease) and a useful when-not-to table with alternatives; the reset ORIG_HEAD tip lacks a warning that it drops uncommitted changes."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clean and accurate, with good habits (fetch first, force-with-lease, ORIG_HEAD with a data-loss warning) and a sensible review-in-progress caveat; very slightly less practical structure than B."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "The most complete and natural explanation, with an explicit merge vs rebase summary, reflog retention, PR review and backup-branch tips; contractions and idioms make it slightly harder for ESL readers."
+      }
+    },
+    "ranking": [
+      "D",
+      "B",
+      "C",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 9483,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1693,
+      "output_tokens_details": {
+        "thinking_tokens": 1002
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 9483,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1693,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 9483,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9483
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1098408
+  }
+}

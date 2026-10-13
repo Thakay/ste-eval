@@ -1,0 +1,93 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T8",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clear, honest reversal with simple language and prices kept out of the cache, but it names no concrete non-cache fixes and reads a bit choppy."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Strong honest reversal that adds useful points (investigate the past staleness cause, cache misses may keep p95 high) and a crisp cost-versus-benefit summary, though it also lacks specific non-cache fixes like indexes or query changes."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5069,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 733,
+      "output_tokens_details": {
+        "thinking_tokens": 393
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5069,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 733,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5069,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5069
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0553288
+  }
+}

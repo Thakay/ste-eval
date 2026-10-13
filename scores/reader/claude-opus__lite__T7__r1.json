@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "Users is a Promise, not an array, so res.json serializes it as {}, giving \"users\": {}. The missing await causes this.",
+    "The size cap of 100 was removed, so clients can request any size, such as size=1000000.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

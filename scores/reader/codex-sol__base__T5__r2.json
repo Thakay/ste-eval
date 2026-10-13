@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "Inside the api container, localhost points to the API container itself, where PostgreSQL is not running.",
+    "DATABASE_URL should use the database service name, db, as the hostname.",
+    "No. depends_on only starts the database container first and does not wait for PostgreSQL to accept connections; a healthcheck with service_healthy is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Measure time spent in database queries, external calls, and application work.",
+    "Define the acceptable delay after a price change, then test that limit when updates fail.",
+    "No. It changed its answer and now advises against adding the proposed Redis cache."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

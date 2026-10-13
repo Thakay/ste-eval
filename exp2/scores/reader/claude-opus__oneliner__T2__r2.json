@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Rebase creates new commits (E', F', G') with new commit IDs, though the changes and messages stay the same.",
+    "Do not rebase commits other developers already have, branches others pull from or push to, shared branches like main or develop, or when team rules say to use merge.",
+    "Run `git rebase --abort` to stop the rebase and return to the state before it started."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

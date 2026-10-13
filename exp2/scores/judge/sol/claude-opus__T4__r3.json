@@ -1,0 +1,73 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T4",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "Claims the UTC change fixed the target test; the notes do not report that result."
+        ],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Clearly prioritizes the blocker and explains the unresolved cause, but invents a successful result for the target test."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [
+          "States that work has stopped; the notes only say not to merge until Priya answers."
+        ],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Preserves the main handoff details, but repetitive phrasing and an unsupported work stoppage make it less precise."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13052,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 722,
+      "reasoning_output_tokens": 501
+    }
+  }
+}

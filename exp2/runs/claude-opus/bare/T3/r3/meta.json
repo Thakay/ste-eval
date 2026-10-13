@@ -1,0 +1,44 @@
+{
+  "model": "claude-opus",
+  "arm": "bare",
+  "task": "T3",
+  "type": "tradeoff",
+  "rep": 3,
+  "seconds": 39.5,
+  "exit": 0,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2285,
+    "cache_read_input_tokens": 535,
+    "output_tokens": 3716,
+    "output_tokens_details": {
+      "thinking_tokens": 2097
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2285,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3716,
+        "cache_read_input_tokens": 535,
+        "cache_creation_input_tokens": 2285,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2285
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null,
+    "cost_usd": 0.09271499999999999
+  }
+}

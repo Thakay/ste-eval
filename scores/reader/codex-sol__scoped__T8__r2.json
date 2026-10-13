@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Measure where slow requests spend their time before changing anything, such as database queries or downstream calls.",
+    "The text does not say how prices should be handled if cached. It only says price caching needs an explicit freshness requirement and evidence the design meets it during updates and failures.",
+    "No. It changed the earlier answer. It now says not to add Redis caching to this endpoint yet."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

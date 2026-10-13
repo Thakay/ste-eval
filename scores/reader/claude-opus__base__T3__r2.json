@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "NOT STATED. The text says migrate in a planned project 1-2 months before the second app server goes live, not now.",
+    "The second app server being scheduled (including Celery workers on another host), lock errors or write latency appearing despite tuning, or needing analytics SQLite handles poorly.",
+    "Ops work: running, tuning, upgrading, and monitoring a service, or paying for managed hosting. Also backups need pg_dump plus WAL archiving."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

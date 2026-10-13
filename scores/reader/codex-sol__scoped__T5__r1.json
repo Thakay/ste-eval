@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "Inside the api container, localhost points to the api container itself, not the db container or your machine.",
+    "DATABASE_URL should use the Compose service name db as the hostname.",
+    "No. depends_on only controls startup order and does not wait for PostgreSQL to accept connections; a healthcheck with service_healthy is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

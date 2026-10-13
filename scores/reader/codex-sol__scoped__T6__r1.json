@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not much. Branches are references, so deleting them usually frees almost no space; unreferenced Git objects need a separate cleanup.",
+    "/srv/app/uploads/tmp, offering up to 31G if its contents are disposable.",
+    "Server hostname and approved access method, confirmation the temp files are disposable with retention period and how to spot active uploads, whether cleanup can run during operation, and branch rules: what counts as old, the merge target, and branches needed for deployment or rollback."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

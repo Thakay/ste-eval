@@ -1,0 +1,4 @@
+{
+  "bare": {"rules_file": null, "label": "Bare CLI: no rule file"},
+  "rule": {"rules_file": "experiments/example/rule.md", "label": "Bare CLI plus the rule under test"}
+}

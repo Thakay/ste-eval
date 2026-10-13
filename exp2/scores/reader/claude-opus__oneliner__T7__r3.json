@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 3,
+  "answers": [
+    "The text does not say what the response contains for users in full. It says users becomes a Promise because await was removed, so res.json serializes it as {}, giving clients no user data.",
+    "The size limit of 100 was removed. The old code capped size at 100, and the new code has no limit.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

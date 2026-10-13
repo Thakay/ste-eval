@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T6",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Provides a reviewable deletion plan and strong safeguards, but omits explicit irreversibility, Docker diagnostics and careful pruning, and checks for other space users."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Clear and easy to follow, but lacks a preview of deletions, Docker investigation, and checks for other space users."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 11929,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 474,
+      "reasoning_output_tokens": 282
+    }
+  }
+}

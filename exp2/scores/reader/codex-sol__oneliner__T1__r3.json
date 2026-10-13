@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T1",
+  "rep": 3,
+  "answers": [
+    "Docker runs pg_dump inside the app-db container, and its output is saved to the backup file.",
+    "A find command deletes files matching app-*.dump in the backup directory when they are older than 6 days (-mtime +6).",
+    "In a separate test container, not the live database, using the same Docker image as app-db."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

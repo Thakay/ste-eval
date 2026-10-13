@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Don't add the proposed Redis cache yet. Trace slow requests to find the real bottleneck, and investigate the previous stale-price failure first.",
+    "Keep prices on an authoritative read path. Only consider caching stable product metadata separately, if caching later proves worthwhile.",
+    "No. The assistant changed its earlier answer and rejected the original cache proposal."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

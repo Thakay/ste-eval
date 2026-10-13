@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Defer caching, diagnose the latency, and investigate the stale-price failure.",
+    "Only with an explicit freshness requirement and evidence the design meets it during updates and failures.",
+    "No. It changed its answer and withdrew the Redis cache-aside recommendation for the price-bearing endpoint."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

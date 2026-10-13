@@ -1,0 +1,135 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T7",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "base",
+    "B": "lite",
+    "C": "scoped",
+    "D": "full"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "Gives clear code fixes for both bugs, but it calls the zero-based change fine and misses the client contract break and the input validation gap."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 2,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 5,
+        "note": "Short and correct on the two main bugs, but it has no code and misses the breaking API change and the validation issue."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "Explains precisely what goes wrong without await (the response holds {} and errors become unhandled rejections), but it misses the client break and the input validation issue."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 5,
+        "note": "Clear, easy wording with a code fix for the size cap, but it does not cover the breaking contract change or the missing input validation."
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "D",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5306,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1161,
+      "output_tokens_details": {
+        "thinking_tokens": 587
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5306,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1161,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5306,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5306
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0657848
+  }
+}

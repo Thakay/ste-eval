@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text recommends keeping SQLite for now if it meets latency targets without recurring lock errors.",
+    "Writes regularly missing latency targets, recurring lock errors, or necessary transactions creating contention.",
+    "PostgreSQL requires more setup, monitoring, upgrades, and backup work."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

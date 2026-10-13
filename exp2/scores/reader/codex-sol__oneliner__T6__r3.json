@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 3,
+  "answers": [
+    "No. Deleting Git branches releases little space because Git keeps the stored data.",
+    "The 31 GB temporary directory.",
+    "Server access, temporary-file rules, branch age limit, base branch, branches to keep, local-only confirmation, backup need, and stop permission."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

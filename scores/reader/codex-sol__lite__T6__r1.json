@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not really. The text says deleting Git branches usually frees little space because most Git objects remain stored.",
+    "The temporary upload directory, with up to 31 GB that could be freed.",
+    "Approval for read-only inspection, temporary file age cutoff and backup rules, how active uploads are identified, whether uploads can pause, branch criteria and protected names, and confirmed backups or retained branches."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

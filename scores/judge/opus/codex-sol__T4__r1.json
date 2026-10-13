@@ -1,0 +1,143 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T4",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "full",
+    "B": "scoped",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Puts the merge blocker first, which suits a fast reader, but the long flat bullet list mixes facts, attempts, and open questions without grouping, and the sign-off is out of place in a handoff doc."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Complete, with a useful step to run tests under both UTC and Europe/Berlin, but the blocker sits mid-document, the reminder cron point is repeated after the steps, and the prose is choppy."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clear, well-ordered prose with a bolded blocker and a logical fix sequence, though the decision is not stated first and the steps have no heading."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Best structure for a handoff: labeled sections separate cause, evidence, attempts, the pending decision, and next steps, and every uncertainty is kept, though the blocker is not the very first line."
+      }
+    },
+    "ranking": [
+      "D",
+      "C",
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7085,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1392,
+      "output_tokens_details": {
+        "thinking_tokens": 719
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7085,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1392,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 7085,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7085
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0846368
+  }
+}

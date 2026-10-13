@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not really. Branches are just pointers to shared Git objects, so deleting them usually frees very little space.",
+    "The uploads/tmp directory is the main target, since reclaiming all 31 GB could bring disk usage to roughly 79%.",
+    "Server address, approved SSH access method, temp-file rules (users, retention, in-use checks, whether uploads/jobs can pause), branch rules (release branch, protected names), and recovery requirements."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "The response contains a promise instead of the users array, because the `await` before `db.users.findMany` was removed. Sent as-is, it cannot return the expected array.",
+    "The page-size limit `Math.min(..., 100)` was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 3,
+  "answers": [
+    "The response contains the list of user records, because the added await makes users hold the query results instead of a Promise. Database errors also reach the caller.",
+    "The maximum page size limit of 100 was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

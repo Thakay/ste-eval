@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not much. Branches are only pointers, and commits stay in .git until git gc runs and no other ref uses them.",
+    "/var/lib/docker at 48G is the largest. uploads/tmp, at up to 31G, is the main target the text recommends.",
+    "A main branch name, branches to keep, whether unpushed work exists, what writes to uploads/tmp, Docker prune go or no-go, and a go per delete step."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

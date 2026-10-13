@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 3,
+  "answers": [
+    "Measure the 900 ms on the product detail endpoint with tracing, find the slowest part, and fix it before adding any cache.",
+    "Do not cache prices. Read them from the source of truth on each request, and always read the price from the database at checkout.",
+    "No. The assistant changed its earlier answer and withdrew the advice to add the cache now."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

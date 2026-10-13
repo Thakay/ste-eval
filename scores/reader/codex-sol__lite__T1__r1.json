@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "The script uses `pg_dump` (run via `docker exec app-db pg_dump`) to create the backup file.",
+    "The script runs `find ... -mmin +10080 -delete` after each successful backup, deleting completed `app-*.dump` files older than seven days.",
+    "On a separate restore test container (`app-db-restore-test`), using separate storage, not production."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

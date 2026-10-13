@@ -1,0 +1,98 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Very clear numbered procedures with short sentences, a full restore test (isolated --network none container, row-count diff against production) and good caveats; the clipped, controlled-English style reads stiff and the alerting advice is a one-line note."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore test uses --no-acl but not --no-owner, so with --exit-on-error it can fail if objects are owned by roles other than app.",
+          "Says row counts should roughly match production, but the script only prints the restored counts and never compares them to production."
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "The most complete answer: a reusable restore-test script that can run weekly, a cron alternative, real-restore steps, and a clear gaps section (off-site copy, alerts, roles, disk space); it is longer, and a few small gaps in the test script slightly weaken it."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 10954,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1873,
+      "output_tokens_details": {
+        "thinking_tokens": 1414
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 10954,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1873,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 10954,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 10954
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1252088
+  }
+}

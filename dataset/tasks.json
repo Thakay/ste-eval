@@ -1,0 +1,231 @@
+[
+  {
+    "id": "T1",
+    "type": "procedure",
+    "why": "STE home turf: step-by-step instructions.",
+    "prompt": "Write the steps to set up a nightly backup of a Postgres 17 database that runs in a Docker container (container name: app-db, database: app, user: app) on an Ubuntu 24.04 server. Keep backups for 7 days. Include how to test that a backup can actually be restored.",
+    "checklist": [
+      "Uses pg_dump (or pg_dumpall) through docker exec, or an equivalent that runs inside or against the container",
+      "Schedules it nightly (cron or systemd timer) with a concrete time",
+      "Compresses the dump or uses the custom format",
+      "Deletes backups older than 7 days (for example find -mtime +7 -delete)",
+      "Tests the restore into a separate scratch database or container, not the live one",
+      "Checks for failure (exit status, log file, or alert)",
+      "Recommends a copy off the server (off-site or other disk)"
+    ],
+    "reader_questions": [
+      {
+        "q": "What command or tool creates the backup file?",
+        "a": "pg_dump run through docker exec (or equivalent)"
+      },
+      {
+        "q": "How are backups older than 7 days removed?",
+        "a": "A cleanup command (such as find with -delete) removes old backup files on a schedule; the exact age flag value does not matter"
+      },
+      {
+        "q": "Where should the restore test happen?",
+        "a": "In a separate scratch database or container, not the live database"
+      }
+    ]
+  },
+  {
+    "id": "T2",
+    "type": "explanation",
+    "why": "Descriptive writing: explain a concept to a junior.",
+    "prompt": "Explain to a junior developer what happens when they run `git rebase main` on a feature branch that has 3 commits, and when they should not use rebase.",
+    "checklist": [
+      "Commits are replayed one by one on top of the tip of main",
+      "The rebased commits get new hashes (history is rewritten)",
+      "Conflicts can stop the rebase at each commit; explains --continue and --abort",
+      "Do not rebase a branch that others have pulled or that is shared",
+      "A pushed branch needs a force push after rebase; recommends --force-with-lease",
+      "Mentions merge as the alternative that keeps history"
+    ],
+    "reader_questions": [
+      {
+        "q": "Do the commit hashes stay the same after a rebase?",
+        "a": "No, the replayed commits get new hashes"
+      },
+      {
+        "q": "When should you not rebase?",
+        "a": "When the branch is shared or other people have pulled it"
+      },
+      {
+        "q": "How do you stop a rebase that is going wrong?",
+        "a": "git rebase --abort"
+      }
+    ]
+  },
+  {
+    "id": "T3",
+    "type": "tradeoff",
+    "why": "Recommendation with nuance: where STE is expected to be weakest.",
+    "prompt": "We run a small SaaS: one VPS (4 vCPU, 8 GB RAM), Django, SQLite in WAL mode, about 2,000 active users, about 50 writes per second at peak, and reads dominate. A contractor says we must move to Postgres now. Next year we may add a second app server. Give me your recommendation and the tradeoffs.",
+    "checklist": [
+      "States that SQLite in WAL mode can handle this load (single writer, 50 writes per second is fine)",
+      "Names the second app server as the real trigger, because SQLite is a local file and network file systems are unsafe for it",
+      "Covers backups for SQLite (for example Litestream or the online backup API)",
+      "Names the extra operational cost of Postgres (backups, upgrades, tuning, or a managed service cost)",
+      "Notes that Django makes migration easier, but data migration and testing still cost time",
+      "Gives a clear recommendation with concrete conditions or signals for when to switch",
+      "Admits what it does not know or what to measure"
+    ],
+    "reader_questions": [
+      {
+        "q": "Should they move to Postgres now?",
+        "a": "Not necessarily now; stay on SQLite unless or until a switch condition happens (the answer must match the response's recommendation)"
+      },
+      {
+        "q": "What event makes the move to Postgres necessary?",
+        "a": "Adding a second app server (multiple processes on different machines writing to the database)"
+      },
+      {
+        "q": "What is one cost of running Postgres?",
+        "a": "Operational work such as backups, upgrades, tuning, or paying for a managed service"
+      }
+    ]
+  },
+  {
+    "id": "T4",
+    "type": "handoff",
+    "why": "Turn messy notes into a handoff doc without inventing facts.",
+    "prompt": "Turn my raw session notes into a handoff doc for the next agent who picks up this bug.\n\nRaw notes:\n- test_invoice_due_dates flaky on CI, passes local. ~1 in 5 runs fail\n- CI runners are UTC, my laptop Europe/Berlin\n- found: due_date computed with datetime.now() (naive) in billing/invoice.py line ~88, compared against date from DB stored as UTC\n- fails when CI run is between 22:00 and 00:00 UTC?? not 100% sure on window, saw 3 failures all after 22:10 UTC\n- tried freezegun in test, test passes but feels like hiding real bug, prod users in Asia might get wrong due date\n- changed invoice.py to datetime.now(timezone.utc) on branch fix/invoice-tz, NOT pushed, 2 other tests now fail (test_late_fee, test_reminder_email) expecting naive datetimes\n- Priya owns billing, asked her in #billing if due dates are meant to be in customer local time or UTC, no answer yet\n- don't merge anything until Priya answers\n- also noticed: reminder cron uses server local time, maybe same bug, didn't check",
+    "checklist": [
+      "Root cause hypothesis: naive local datetime.now() compared with UTC dates from the DB",
+      "Evidence stated with its uncertainty: 3 failures, all after 22:10 UTC; the exact window is not confirmed",
+      "Branch fix/invoice-tz exists locally and is NOT pushed",
+      "Names the 2 newly failing tests: test_late_fee and test_reminder_email",
+      "Blocker: waiting for Priya to say if due dates are UTC or customer local time; do not merge until then",
+      "freezegun was tried and rejected because it hides the real bug",
+      "Reminder cron may have the same bug and was not checked",
+      "Does not invent facts that are not in the notes"
+    ],
+    "reader_questions": [
+      {
+        "q": "Is the fix branch pushed?",
+        "a": "No, it is only local"
+      },
+      {
+        "q": "Who must answer what before anything is merged?",
+        "a": "Priya must say if due dates are in UTC or customer local time"
+      },
+      {
+        "q": "Which two tests fail with the fix?",
+        "a": "test_late_fee and test_reminder_email"
+      }
+    ]
+  },
+  {
+    "id": "T5",
+    "type": "incident",
+    "why": "Explain an error from logs and give the fix.",
+    "prompt": "It works when I run the API on my machine with `npm run dev`. Why does it fail in compose, and how do I fix it?\n\n```\n$ docker compose up\napi-1  | > node dist/server.js\napi-1  | [db] connecting to postgres://app:****@localhost:5432/app\napi-1  | Error: connect ECONNREFUSED 127.0.0.1:5432\napi-1  |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)\napi-1  | Node.js v22.11.0\napi-1 exited with code 1\ndb-1   | 2026-10-12 09:14:03.512 UTC [1] LOG:  database system is ready to accept connections\n```\n\ndocker-compose.yml:\n```yaml\nservices:\n  api:\n    build: .\n    environment:\n      DATABASE_URL: postgres://app:secret@localhost:5432/app\n    depends_on:\n      - db\n  db:\n    image: postgres:17\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n```",
+    "checklist": [
+      "Explains that localhost inside the api container means the api container itself, not the db container",
+      "Fix: change the host in DATABASE_URL to the service name db",
+      "Notes that depends_on alone does not wait for Postgres to be ready (the db ready log comes after the api crash)",
+      "Adds a healthcheck with condition: service_healthy, or a retry or restart policy",
+      "Gives a way to verify the fix",
+      "Explains why npm run dev works on the host (Postgres is reachable on the host's localhost)"
+    ],
+    "reader_questions": [
+      {
+        "q": "In the api container, what does localhost point to?",
+        "a": "The api container itself"
+      },
+      {
+        "q": "What host name should DATABASE_URL use?",
+        "a": "db (the compose service name)"
+      },
+      {
+        "q": "Is depends_on enough to make the api wait until Postgres is ready?",
+        "a": "No, it needs a healthcheck with service_healthy or a retry"
+      }
+    ]
+  },
+  {
+    "id": "T6",
+    "type": "warning",
+    "why": "Risky action: STE has special rules for warnings.",
+    "prompt": "On the prod server (Ubuntu, single box, runs our app) the disk is 94% full. I want you to free space: delete the old git branches in the /srv/app repo and clear /srv/app/uploads/tmp. Here is what I see:\n\n```\n$ df -h /\n/dev/sda1  200G  188G  12G  94% /\n$ du -sh /srv/app/uploads/tmp\n31G /srv/app/uploads/tmp\n$ du -sh /var/lib/docker\n48G /var/lib/docker\n$ git -C /srv/app branch | wc -l\n212\n```\n\nWrite what you would do and what you need from me before you run anything.",
+    "checklist": [
+      "Says that deleting git branches frees almost no disk space",
+      "Checks what writes to uploads/tmp and whether files are in use or recent before deleting (for example by age)",
+      "Names /var/lib/docker as a bigger target and suggests docker system df plus a careful prune",
+      "Proposes a dry run, a listing, or a backup or snapshot before deleting",
+      "States clearly that the deletes cannot be undone",
+      "Asks for explicit confirmation before running destructive commands",
+      "Mentions other common space users (logs or journal) or a way to find them"
+    ],
+    "reader_questions": [
+      {
+        "q": "Will deleting the git branches free a lot of space?",
+        "a": "No, branches use almost no space"
+      },
+      {
+        "q": "Which directory is the biggest target for freeing space?",
+        "a": "/var/lib/docker (48G)"
+      },
+      {
+        "q": "What does the agent need from the user before deleting?",
+        "a": "Explicit confirmation (and agreement on what is safe to delete)"
+      }
+    ]
+  },
+  {
+    "id": "T7",
+    "type": "code-review",
+    "why": "Review comments on a diff: findings must be precise and actionable.",
+    "prompt": "Review this pull request. Write the review comments and say if you approve or request changes.\n\nPR description: \"Switch pagination to zero-based pages to match the mobile app.\"\n\n```diff\n--- a/src/api/users.ts\n+++ b/src/api/users.ts\n@@ export async function listUsers(req, res) {\n-  const page = Number(req.query.page ?? 1);\n-  const size = Math.min(Number(req.query.size ?? 20), 100);\n-  const users = await db.users.findMany({ skip: (page - 1) * size, take: size });\n+  const page = Number(req.query.page ?? 0);\n+  const size = Number(req.query.size ?? 20);\n+  const users = db.users.findMany({ skip: page * size, take: size });\n   res.json({ page, size, users });\n }\n```",
+    "checklist": [
+      "Finds the missing await: users is a Promise, so the response does not contain the users",
+      "Finds that the max size cap of 100 was removed (huge queries, abuse risk)",
+      "Notes that zero-based pages break existing clients that send page=1 (API contract change needs versioning or coordination)",
+      "Notes no validation of invalid or negative input (NaN, negative page)",
+      "Decision: request changes",
+      "Gives a concrete fix for each finding"
+    ],
+    "reader_questions": [
+      {
+        "q": "What does the response contain for users after this change, and why?",
+        "a": "Not the users: a Promise (serialized as an empty object) because the await was removed"
+      },
+      {
+        "q": "What limit was removed?",
+        "a": "The maximum page size of 100"
+      },
+      {
+        "q": "Approve or request changes?",
+        "a": "Request changes"
+      }
+    ]
+  },
+  {
+    "id": "T8",
+    "type": "discussion",
+    "why": "Pushback and argument: nuance, honesty about unknowns, tone.",
+    "prompt": "Conversation so far:\n\nUser: Should we add Redis caching to our product API? p95 latency is 900 ms.\n\nAssistant: Yes. Add a Redis cache-aside layer for the product detail endpoint with a 10 minute TTL. That should bring p95 well under 200 ms.\n\nUser (now): Last time we added a cache, we served stale prices for 2 hours and had to refund customers. Convince me we should NOT cache, or change your answer. Be honest about what you don't know.",
+    "checklist": [
+      "Takes the stale price incident seriously and revises or qualifies the earlier confident claim",
+      "Says to find where the 900 ms goes first (profiling, tracing, slow queries, N+1)",
+      "Offers fixes that need no cache (indexes, query fixes, payload size)",
+      "If caching, keeps prices out of the cache or uses short TTL plus event-based invalidation",
+      "Takes a clear position",
+      "States what it does not know (for example where the latency comes from, the price update path)"
+    ],
+    "reader_questions": [
+      {
+        "q": "What should the team do first?",
+        "a": "Measure where the 900 ms goes (profile or trace) before adding a cache"
+      },
+      {
+        "q": "If they do cache, how should prices be handled?",
+        "a": "Keep prices out of the cache, or use short TTL with invalidation on price change"
+      },
+      {
+        "q": "Did the assistant keep its earlier answer unchanged?",
+        "a": "No, it revised or qualified it"
+      }
+    ]
+  }
+]

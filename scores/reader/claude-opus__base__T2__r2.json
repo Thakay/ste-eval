@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Rebase gives each replayed commit a new hash, because its parent changed, so the old hashes are replaced.",
+    "Do not rebase commits other people already have, shared branches like main or develop, or branches with merge commits you want kept.",
+    "Run git rebase --abort to cancel the rebase and return the branch to exactly where it started."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

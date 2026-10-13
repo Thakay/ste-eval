@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "The response now sends users before the query finishes, because the promise is not awaited. Res.json() does not wait, so the response is wrong.",
+    "The 100-user page limit was removed, so requests like ?size=1000000 are allowed.",
+    "Request changes."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

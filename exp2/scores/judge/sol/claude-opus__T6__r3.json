@@ -1,0 +1,78 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T6",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The ref-backup command lacks -C /srv/app and may target the wrong repository.",
+          "Branches are not always separate 41-byte files; refs can be packed.",
+          "The claim that garbage collection would free little space is unsupported without inspecting the repository."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "A sets a clear approval gate and checks temporary-file usage, but omits a Docker cleanup proposal and an explicit warning that deleted uploads cannot be recovered."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "invented": [
+          "Claims this session cannot connect to the production server.",
+          "Claims the app does not clean uploads/tmp."
+        ],
+        "errors": [
+          "Branches are not always separate 41-byte files; refs can be packed.",
+          "An unchanged df reading does not prove that a process holds deleted files open.",
+          "Saving branch names and commit hashes does not guarantee restoration after the referenced objects are garbage-collected."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 6,
+        "note": "B provides useful Docker inspection and cleanup commands, but does not clearly require approval before deleting uploads and makes unsupported claims about the environment."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13480,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1055,
+      "reasoning_output_tokens": 745
+    }
+  }
+}

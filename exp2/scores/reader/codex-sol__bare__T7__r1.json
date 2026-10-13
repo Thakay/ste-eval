@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "The response contains a serialized promise instead of the users array, because `users` holds a promise and `res.json()` does not await it.",
+    "The `Math.min(..., 100)` cap on maximum page size was removed, letting callers request arbitrarily large pages.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not really. The text says deleting Git branches usually frees little space, because it removes references but not the stored Git objects.",
+    "The 31 GB temporary directory is the first cleanup candidate.",
+    "The server address, SSH username, an approved access method, the temporary-file retention rule, how the app identifies files uploads still need, whether upload workers can be briefly paused, and the definition of old branches, their merge target, and branches to protect."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Says SQLite has few tools for point-in-time recovery, which undersells Litestream, the tool it recommends in the same answer"
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Very complete and easy to act on, with a working config, clear switch signals, and a detailed cutover plan, but the short, flat sentences read stilted, and it never says that the Django ORM makes the move easier."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "A sharp verdict, a useful tradeoff table, and the key question about whether the second server is for capacity or redundancy give strong nuance, though contractions and idioms make it a little harder for ESL readers, and it also skips that Django eases the migration."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8323,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1441,
+      "output_tokens_details": {
+        "thinking_tokens": 1033
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8323,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1441,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 8323,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8323
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0955208
+  }
+}

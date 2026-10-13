@@ -1,0 +1,93 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T5",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Correct fix for both the hostname and the startup timing, with useful notes on published ports and app-level retries, but it gives no explicit way to verify the fix."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Short, correct and very easy to read, but it skips verification, barely explains why it works on the host, and gives no caveats such as retries or how to keep local dev working."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5386,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 835,
+      "output_tokens_details": {
+        "thinking_tokens": 521
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5386,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 835,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5386,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5386
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0599048
+  }
+}

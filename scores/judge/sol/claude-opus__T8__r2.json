@@ -1,0 +1,120 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T8",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "full",
+    "C": "base",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Reading the live price at checkout does not guarantee correct customer charges or prevent refunds; a changed price must also be communicated and accepted."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Provides a concrete investigation and caching plan, but overstates the protection offered by live checkout pricing."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Reading the live price at checkout does not protect against every stale-price bug, including discrepancies between the displayed and charged price."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Clearly connects unknowns to decisions and gives practical next steps, with one overly broad claim about checkout protection."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "Attributes the previous incident specifically to a cache becoming a second source of truth, although its cause is unknown."
+        ],
+        "errors": [
+          "Live checkout pricing does not necessarily make stale displayed prices merely a display problem; price discrepancies can still lead to refunds."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Covers diagnosis and conditional caching well, but mixes careful uncertainty with an unsupported explanation of the previous incident."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Failed invalidation alone does not extend staleness beyond a correctly enforced 10 minute TTL.",
+          "Many different products do not establish that most requests will miss the cache; request frequency and reuse also matter.",
+          "Stale descriptions, images, and specifications can have financial consequences, so calling them categorically safe is incorrect.",
+          "Reading the live price at checkout does not guarantee prevention of refunds from displayed and charged price discrepancies."
+        ],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 2,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Easy to follow and decisive, but several absolute claims make its caching guidance less reliable."
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13281,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1513,
+      "reasoning_output_tokens": 823
+    }
+  }
+}

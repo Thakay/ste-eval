@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "No. Rebase gives each commit a new hash, so the new commit IDs differ from the old ones.",
+    "Do not rebase commits that other persons have, branches others use, pushed commits, projects that want merge commits, or rebases with many conflicts.",
+    "Run git rebase --abort to stop the rebase and return to the condition before the rebase."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Rebase gives each replayed commit a new hash because it has a new parent. The old commits stay in reflog.",
+    "Do not rebase shared branches, main, or commits others use. Also avoid it when a teammate branched from yours or a reviewer is mid-review.",
+    "Run git rebase --abort. Git then puts your branch back to how it was before the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

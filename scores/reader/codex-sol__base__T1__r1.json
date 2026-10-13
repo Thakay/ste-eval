@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "Docker runs pg_dump inside the app-db container, and its output is saved to a temp file.",
+    "A find command deletes files matching app-*.dump with -mtime +6 in /var/backups/app-db.",
+    "In a separate disposable container, a PostgreSQL 17 instance with no published ports and no network."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

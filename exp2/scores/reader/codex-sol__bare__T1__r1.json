@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "pg_dump, run inside the app-db container via docker exec, with its output saved on the host.",
+    "A find command deletes completed app_*.dump files whose age exceeds six days, after successful backups.",
+    "In a disposable container, using the same Postgres 17 image as production, with no external networking or published ports."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

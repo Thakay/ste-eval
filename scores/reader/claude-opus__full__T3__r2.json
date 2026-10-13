@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "No. Stay on SQLite now and move to Postgres before the second app server goes live.",
+    "Adding a second app server, since SQLite cannot be shared across hosts over the network.",
+    "Connection settings to manage, plus a server to tune, upgrade, back up, and monitor."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

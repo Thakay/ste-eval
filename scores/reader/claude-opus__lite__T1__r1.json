@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "The script runs docker exec app-db pg_dump -U app -d app -Fc, writes to a .tmp file, then mv renames it.",
+    "The script runs find with -name 'app-*.dump' -mtime +6 -delete after a successful dump.",
+    "In a throwaway container, started from the same image as app-db, with no volume and no published port."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

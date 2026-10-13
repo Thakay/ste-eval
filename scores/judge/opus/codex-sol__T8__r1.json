@@ -1,0 +1,135 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T8",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "full",
+    "B": "scoped",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clear reversal and good list of unknowns, but its only non-cache fix is a vague 'address the measured bottleneck' and the short sentences read a bit choppy."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Strong nuance, including that checkout verification does not stop customers from seeing stale prices, but it names no concrete non-cache fixes."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Compact numbered plan that adds checking freshness under failures, but the performance fix stays abstract and the unknowns are packed into one dense sentence."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Most complete answer: it gives concrete non-cache fixes, keeps prices on an authoritative read path, and closes with a well-scoped verdict."
+      }
+    },
+    "ranking": [
+      "D",
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6029,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1485,
+      "output_tokens_details": {
+        "thinking_tokens": 881
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6029,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1485,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 6029,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6029
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0780488
+  }
+}

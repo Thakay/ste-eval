@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "NOT STATED",
+    "Priya must answer the timezone question (customer local time or UTC) before anything is merged. The handoff says to merge only after Priya signs off.",
+    "test_late_fee and test_reminder_email"
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

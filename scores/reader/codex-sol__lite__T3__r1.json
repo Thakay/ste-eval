@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says to keep SQLite for now if it meets latency and reliability targets, and to plan the migration first.",
+    "Lock errors persisting, write delays breaching targets, or forecasts showing little spare capacity. A firm plan for a second app server also favors moving.",
+    "Postgres adds connection management, upgrades, configuration, and backup administration. It also uses additional memory and CPU."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

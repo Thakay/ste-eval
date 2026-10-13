@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "The response contains no user records, because the missing await leaves users as a promise instead of data.",
+    "The limit of 100 records was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "NOT STATED. The text says keep SQLite now if targets are met, but budget for Postgres before a second app server.",
+    "A second app server needing direct access to the same database, or lock contention causing failed writes or unacceptable latency despite short transactions.",
+    "It competes with Django for RAM and CPU on the current VPS."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

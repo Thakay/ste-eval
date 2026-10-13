@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "No. The fix branch fix/invoice-tz is local only and has not been pushed.",
+    "Priya, the billing owner, must confirm whether due dates should be customer-local time or UTC. Nothing is merged until she does.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

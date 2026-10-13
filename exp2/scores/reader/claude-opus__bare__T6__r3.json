@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 3,
+  "answers": [
+    "Not by much. Branches are tiny ref files; the commits they point to stay until reflog expiry and gc prune them.",
+    "uploads/tmp (31G) is the biggest target, if it is truly temporary data.",
+    "Access (host, user, sudo), what writes to uploads/tmp and whether its files are permanent, which branches must stay, whether a backup exists, timing, and whether to investigate Docker and the missing ~109G."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

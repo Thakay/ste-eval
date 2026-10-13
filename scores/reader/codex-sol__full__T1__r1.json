@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "The `pg_dump` command, run inside the `app-db` container via `docker exec`, creates the backup file.",
+    "The `find ... -name 'app-*.dump' -mtime +6 -delete` command in the backup script deletes them after each successful dump.",
+    "In a separate, temporary Docker container using the same image as app-db, with --network none."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

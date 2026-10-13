@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "No. The text says keep SQLite for now unless lock errors or write delays persist, or a second app server needs direct database access.",
+    "Persistent lock errors or write delays after tuning, or needing a second app server with direct database access.",
+    "It runs on your VPS and needs service, connection management, upgrades, and backup planning."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

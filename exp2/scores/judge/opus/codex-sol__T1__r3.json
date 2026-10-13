@@ -1,0 +1,97 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T1",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The .pgpass advice says to set it up for 'the operating-system account used by docker exec'. That is unclear: pg_dump runs inside the container, so the file must be in the container user's home directory, not on the host."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 3,
+        "overall": 8,
+        "note": "Covers every point, with a locking, self-cleaning script and an automated restore test; dense phrasing and the vague .pgpass and monitoring advice make it harder for some readers."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Very clear, ESL-friendly steps with a systemd timer, a same-image restore test, and the timer enabled only after the test passes, but it never recommends an off-server copy and gives no ongoing failure alert."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8077,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1597,
+      "output_tokens_details": {
+        "thinking_tokens": 1184
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8077,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1597,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 8077,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8077
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0966728
+  }
+}

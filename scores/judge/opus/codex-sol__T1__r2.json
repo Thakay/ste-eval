@@ -1,0 +1,141 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T1",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "full",
+    "C": "base",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Covers every point with correct, safe scripts (lock, temp file, single-transaction restore, isolated container), though forcing TCP plus a stored password adds setup friction that the password step explains in a confusing way."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Has the strongest restore test (same image as app-db, automatic cleanup, row counts for every table), but it never recommends an off-server copy, and its .pgpass guidance is vague."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore block starts with 'set -e' in the interactive root shell, so any failing command closes that shell"
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Most complete on caveats (version check, correct .pgpass entry, alert advice, off-server copy, roles not included), but running 'set -e' interactively is a real usability trap."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Very clear small sudo-based steps with careful handling of root-owned files, but it has no off-server copy, the script writes nothing to the log on success, and data checking is left to an open-ended interactive psql session."
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "B",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 12535,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 2870,
+      "output_tokens_details": {
+        "thinking_tokens": 2161
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 12535,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2870,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 12535,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 12535
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.15779680000000001
+  }
+}

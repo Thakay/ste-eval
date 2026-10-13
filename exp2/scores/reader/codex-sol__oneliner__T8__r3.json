@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T8",
+  "rep": 3,
+  "answers": [
+    "Measure the time spent in database queries and calls to other services first, then select a change based on those results.",
+    "Keep prices separate from any cache. Do not cache prices until the previous failure is understood and a prevention method is tested.",
+    "No. The assistant changed its earlier answer and withdrew the recommendation to add a Redis cache for prices."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

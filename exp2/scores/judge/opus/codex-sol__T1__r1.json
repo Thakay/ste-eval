@@ -1,0 +1,95 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "A complete, well-guarded setup with a systemd timer and a fully automated, self-cleaning restore test, but the order is odd (timer comes after the restore test), it hardcodes postgres:17 instead of the production image, and the short sentences read a bit stilted."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "A strong, well-reasoned answer with good caveats (it reuses the production image, notes that roles are not in pg_dump, and explains the owner and privilege flags), though the restore test is manual with a placeholder path and the readiness loop has no timeout."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8310,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1195,
+      "output_tokens_details": {
+        "thinking_tokens": 810
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8310,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1195,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 8310,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8310
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0904968
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Git computes new commit IDs because each rebased commit gets a new parent, so the hashes change.",
+    "Do not rebase a branch that other people already pulled or built work on, or main, develop, or release branches.",
+    "Run git rebase --abort to cancel the full rebase and return the branch to its old state."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

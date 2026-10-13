@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "It points to the api container itself, not your machine or the database.",
+    "It should use the host name db: postgres://app:secret@db:5432/app.",
+    "No. depends_on only controls start order and does not wait until PostgreSQL is ready."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

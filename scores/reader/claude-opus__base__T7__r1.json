@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "Users is always empty, since findMany returns an unawaited Promise that res.json serializes as {}.",
+    "The page size cap, Math.min(..., 100), was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

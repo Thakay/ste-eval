@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "The response contains users as a Promise instead of the fetched user records, because `await` was removed from `db.users.findMany`.",
+    "The 100-user page-size cap, from removing `Math.min(..., 100)`.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

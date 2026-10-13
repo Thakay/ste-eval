@@ -1,0 +1,112 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T8",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "base",
+    "C": "lite",
+    "D": "full"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Clearly retracts the unsupported recommendation and preserves the important caveat that live checkout pricing can still surprise customers."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "A hit rate above about 95% is not generally required for p95 to improve; that depends on the hit and miss latency distributions and the target.",
+          "Broken invalidation alone does not extend staleness beyond a correctly enforced 10 minute TTL."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Offers useful diagnosis and customer protection steps, but adds incorrect certainty about percentile behavior and TTL limits."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Gives a clear, cautious plan, though it should address customer consent when the checkout price differs from the displayed price."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The existing p95 of 900 ms does not establish that each cache miss will cost 900 ms."
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Provides a practical sequence and explicitly requires investigating the previous incident, but treats p95 as a fixed miss latency."
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "D",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13041,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1337,
+      "reasoning_output_tokens": 759
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "Docker runs pg_dump inside app-db with custom format (-Fc), writing the file via shell redirection.",
+    "The find command with -mtime +6 deletes app_*.dump files older than 7 days, after a successful backup.",
+    "On a separate temporary container named app-db-restore-test, never on app-db, since pg_restore can overwrite live data."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

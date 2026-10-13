@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "pg_dump, run inside container app-db via docker exec by the script /usr/local/sbin/backup-app-db.",
+    "A find command deletes app-*.dump files older than seven days (-mtime +6) after pg_dump succeeds.",
+    "In a separate test container named app-db-restore-test, which has no external network connection."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

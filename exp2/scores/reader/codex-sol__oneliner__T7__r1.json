@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "Users are returned as a promise, not the user list, because the `findMany` call lacks `await`, so `res.json` receives the promise.",
+    "The maximum page size limit of 100 was removed. The text says it should be kept.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

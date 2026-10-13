@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Trace 20 slow production requests to find which step uses most of the 900 ms, fix that step, then re-measure p95.",
+    "Cache only static fields. Read price and stock from the source of truth on every request, and make checkout charge the live price.",
+    "No. It changed its earlier answer and now advises against adding a cache yet."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T5",
+  "rep": 3,
+  "answers": [
+    "Localhost points to the api container itself, not the computer or the db container. No PostgreSQL server runs there.",
+    "DATABASE_URL should use the host name db, the Compose service name.",
+    "No. depends_on only starts db first. It does not wait for PostgreSQL to be ready, so a healthcheck with condition service_healthy is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

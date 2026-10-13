@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T2",
+  "rep": 3,
+  "answers": [
+    "Yes, no. Rebase makes new commits with new hashes, and the old commits stay only in reflog for a time.",
+    "Do not rebase shared branches, main or public branches, teams that use merge, rebases with many conflicts, or when unsure.",
+    "Run git rebase --abort to stop the rebase and return to the state before it started."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

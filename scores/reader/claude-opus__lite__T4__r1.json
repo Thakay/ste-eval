@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "No. The branch fix/invoice-tz exists only on Kay's laptop and was never pushed.",
+    "Priya, the billing owner, must decide whether due dates use UTC or customer local time. Nothing merges before her answer.",
+    "test_late_fee and test_reminder_email fail with the draft fix."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

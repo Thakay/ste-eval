@@ -1,0 +1,107 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T2",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "base",
+    "B": "scoped",
+    "C": "full",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Covers all requirements with useful examples, but extra advice distracts from the core explanation and the hard-reset instruction needs a warning about losing uncommitted changes."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Provides a clear procedure and useful alternatives, but the hard-reset recovery advice omits its risk to uncommitted changes."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Explains the core behavior clearly and includes useful caveats about local main, pushing, and recovery, including the hard-reset data-loss warning."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Gives a focused explanation and practical conflict instructions, though mentioning that main is local would prevent a common misunderstanding."
+      }
+    },
+    "ranking": [
+      "C",
+      "D",
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 14954,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1093,
+      "reasoning_output_tokens": 734
+    }
+  }
+}

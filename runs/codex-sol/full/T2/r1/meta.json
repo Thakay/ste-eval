@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "full",
+  "task": "T2",
+  "type": "explanation",
+  "rep": 1,
+  "seconds": 47.8,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 14289,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1358,
+    "reasoning_output_tokens": 1034
+  }
+}

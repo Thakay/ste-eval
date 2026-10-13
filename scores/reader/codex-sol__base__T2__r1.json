@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "Yes, the hashes change. The replayed commits get new commit IDs because their history has changed.",
+    "Avoid rebase when others have pulled or built on those commits, when you must keep the original branch and merge history, or when you have unprotected uncommitted work.",
+    "Run `git rebase --abort` to cancel and restore your original branch history."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

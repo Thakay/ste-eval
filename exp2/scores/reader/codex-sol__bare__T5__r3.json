@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T5",
+  "rep": 3,
+  "answers": [
+    "The api container itself, not your machine.",
+    "db, the Compose service name.",
+    "No. Plain depends_on only starts db first; use condition: service_healthy with a healthcheck."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

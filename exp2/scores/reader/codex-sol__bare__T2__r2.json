@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "Yes, no. Rebasing gives commits new IDs because their parents change, so the hashes change.",
+    "Avoid rebasing when others depend on the commits you would rewrite, or when you must preserve original history and merge structure.",
+    "Run git rebase --abort to cancel the rebase and return to where you started."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

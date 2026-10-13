@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T8",
+  "rep": 1,
+  "answers": [
+    "Measure where slow requests spend their time before choosing any performance fix.",
+    "Cache stable product fields separately from prices; before caching prices, define the acceptable update delay and verify the system enforces it.",
+    "No, the assistant changed its earlier recommendation and no longer recommends the Redis cache for responses with prices."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

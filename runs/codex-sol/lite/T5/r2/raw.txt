@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"`localhost` points to the API container when the API runs in Compose. With `npm run dev`, it points to your machine. In Compose, the API must connect to `db:5432`, using the PostgreSQL service name.\n\nYour current `depends_on` controls startup order. It does not wait for PostgreSQL to accept connections.\n\n1. Replace your configuration with this:\n\n   ```yaml\n   services:\n     api:\n       build: .\n       environment:\n         DATABASE_URL: postgres://app:secret@db:5432/app\n       depends_on:\n         db:\n           condition: service_healthy\n\n     db:\n       image: postgres:17\n       environment:\n         POSTGRES_USER: app\n         POSTGRES_PASSWORD: secret\n         POSTGRES_DB: app\n       healthcheck:\n         test: [\"CMD\", \"pg_isready\", \"-U\", \"app\", \"-d\", \"app\"]\n         interval: 5s\n         timeout: 5s\n         retries: 10\n   ```\n\n2. Apply the configuration:\n\n   ```bash\n   docker compose up --build\n   ```\n\nThe host change fixes the reported connection failure. The health check prevents the API from starting before PostgreSQL is ready.\n\nGodspeed, Spartan."}}
+{"type":"turn.completed","usage":{"input_tokens":11180,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1296,"reasoning_output_tokens":1034}}
+
+--- STDERR ---
+Reading additional input from stdin...

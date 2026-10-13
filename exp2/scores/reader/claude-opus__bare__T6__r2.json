@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not directly. Deleting branches only removes small ref files; the commits stay until reflog expiry and git gc, so it is mostly tidying.",
+    "uploads/tmp at /srv/app/uploads/tmp (31G) is the real target; Docker (48G) is also a likely easy win.",
+    "The user must confirm the plan, say what writes and reads uploads/tmp and the safe age cutoff, answer branch and Docker questions, and confirm backups and restart windows."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T6",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "base",
+    "C": "full",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The KEEP regex pattern breaks if KEEP is empty or holds several names without pipe separators (minor)"
+        ],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Very careful process with a dry run per step, a branch restore file, and clear Docker volume warnings, but it never says plainly that the tmp deletes are permanent and does not point out the roughly 109G that is still unexplained."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Recommends docker image prune -a with a 7-day filter, which can remove rollback images before the user confirms how far back to keep"
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Leads with the decisions that change the plan, flags the unexplained 109G, includes a preview, a backup question, and a verify step, though its Docker prune is somewhat aggressive."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Runs lsof without sudo, so it can miss files held open by the app user",
+          "Gives the tmp delete command with no file-list preview step"
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Simple and easy for ESL readers, with a good table that includes the unknown 109G, but its delete steps have no explicit dry-run listing and it never states that the deletes cannot be undone."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Spots the problems in the plan well and splits the work into read-only and delete phases, but it relies on size totals instead of a file-list preview and asks for no backup."
+      }
+    },
+    "ranking": [
+      "A",
+      "B",
+      "D",
+      "C"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 11057,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 2655,
+      "output_tokens_details": {
+        "thinking_tokens": 1867
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 11057,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2655,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 11057,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 11057
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1416728
+  }
+}

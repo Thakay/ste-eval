@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 3,
+  "answers": [
+    "Users would be a Promise, not the array, so res.json serializes it as {}. Missing await also stops database errors from propagating through the async handler.",
+    "The Math.min(..., 100) cap that limited page size to 100 users was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

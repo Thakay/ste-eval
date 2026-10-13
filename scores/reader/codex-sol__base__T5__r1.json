@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "Localhost points to the API container itself, not the Postgres container.",
+    "DATABASE_URL should use the host name db, the Compose service name.",
+    "NOT STATED"
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

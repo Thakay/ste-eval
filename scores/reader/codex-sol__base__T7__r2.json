@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "Users would be sent before the query finishes, so the list is missing. The removed `await` makes `users` a promise, not the fetched array.",
+    "The page-size cap `Math.min(..., 100)` was removed, so clients can request arbitrarily large result sets.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

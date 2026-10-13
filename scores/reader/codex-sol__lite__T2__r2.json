@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No, rebase gives commits new IDs because their parents change.",
+    "Avoid rebasing commits that other developers use as a base for their work.",
+    "Run git rebase --abort to restore your branch to its state before the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

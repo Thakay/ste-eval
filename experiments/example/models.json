@@ -1,0 +1,54 @@
+{
+  "claude-opus": {
+    "rules_name": "CLAUDE.md",
+    "cmd": [
+      "claude",
+      "-p",
+      "{PROMPT}",
+      "--model",
+      "opus",
+      "--effort",
+      "xhigh",
+      "--tools",
+      "",
+      "--setting-sources",
+      "project,local",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "dontAsk",
+      "--no-session-persistence",
+      "--output-format",
+      "json"
+    ]
+  },
+  "codex-sol": {
+    "rules_name": "AGENTS.md",
+    "cmd": [
+      "codex",
+      "exec",
+      "-m",
+      "gpt-6.1-sol",
+      "-c",
+      "model_reasoning_effort=\"xhigh\"",
+      "-c",
+      "approval_policy=\"never\"",
+      "-c",
+      "web_search=\"disabled\"",
+      "-c",
+      "features.apps=false",
+      "-c",
+      "features.browser_use=false",
+      "--sandbox",
+      "read-only",
+      "--skip-git-repo-check",
+      "--ephemeral",
+      "--json",
+      "-o",
+      "last.md",
+      "{PROMPT}"
+    ],
+    "env": {
+      "CODEX_HOME": "/tmp/codex-bare-home"
+    }
+  }
+}

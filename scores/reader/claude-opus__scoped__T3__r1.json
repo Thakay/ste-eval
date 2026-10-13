@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. Stay on SQLite for now and plan the move a few months before adding a second app server.",
+    "Committing to a second app server, since two machines cannot safely share one SQLite file.",
+    "Operations: you must run, upgrade, tune, and back up a service, though managed Postgres removes most of this."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

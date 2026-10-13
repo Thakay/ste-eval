@@ -1,0 +1,111 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "base",
+    "B": "full",
+    "C": "scoped",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Strong operational guidance and concrete migration triggers, but it omits Django's role in easing migration."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Gives a clear conditional recommendation and practical checks while covering the operational and migration tradeoffs."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Explains write capacity and the architecture trigger well, but its backup advice lacks SQLite-specific implementation guidance."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Provides clear measurement and migration conditions, but omits Django migration considerations and gives only general backup guidance."
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13272,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 461
+    }
+  }
+}

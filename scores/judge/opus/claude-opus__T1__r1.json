@@ -1,0 +1,144 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "scoped",
+    "C": "full",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Cleanup uses docker rm -f without -v, so the test container's anonymous data volume stays on disk after each test"
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Solid, correct cron-based setup with a good warning about removing the wrong container, but it is a bit terse and leaves an orphan volume after each restore test."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Very clear numbered steps run from one root shell, a correct systemd timer, explicit pass/fail checks for the restore, and a strong list of gaps; the hard-coded postgres:17 image adds one small manual check."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Thorough cron setup with useful cron.d gotchas and clear restore pass criteria; --no-owner --no-acl makes the test more robust but slightly less faithful to a real restore."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Restore test reads the root-only backup folder (ls and the < redirect) without sudo or a root shell, so it fails for a normal user",
+          "journalctl is run without sudo, which may show no entries for a normal user"
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 3,
+        "overall": 7,
+        "note": "Best nuance (restore timing, real-restore note, 7-day retention risk), but the restore steps break on permissions and the denser prose is harder for ESL readers."
+      }
+    },
+    "ranking": [
+      "B",
+      "C",
+      "A",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 13213,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 2773,
+      "output_tokens_details": {
+        "thinking_tokens": 2009
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 13213,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2773,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 13213,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 13213
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1612808
+  }
+}

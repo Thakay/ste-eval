@@ -1,0 +1,77 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [
+          "Assumes write locks last only one or two milliseconds, without transaction measurements."
+        ],
+        "errors": [
+          "Recommends synchronous=NORMAL without explaining that a power failure can lose committed transactions.",
+          "Says N+1 queries cost almost nothing in-process, overlooking repeated query execution and data-processing costs.",
+          "Suggests keeping the SQLite file as a rollback without explaining that it will lack writes made after cutover."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Clear and practical, but its performance assumptions and fixed migration timeline exceed the available evidence."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Recommends synchronous=NORMAL without explaining that a power failure can lose committed transactions.",
+          "Unqualified deletion of content types and permissions can violate foreign-key dependencies; the migration procedure needs a safe deletion order and handling of dependent rows.",
+          "Presents Django connection pooling as a solution for many workers without explaining that its pools are per process and do not impose a shared connection limit."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Stronger measurement-based switch conditions and explicit rollback limits make this more useful, though its migration instructions need correction."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13775,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1353,
+      "reasoning_output_tokens": 1030
+    }
+  }
+}

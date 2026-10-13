@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "bare",
+  "task": "T5",
+  "type": "incident",
+  "rep": 2,
+  "seconds": 29.1,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10774,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 799,
+    "reasoning_output_tokens": 516
+  }
+}

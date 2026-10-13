@@ -1,0 +1,109 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T5",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "base",
+    "B": "full",
+    "C": "lite",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Explains both causes and gives a robust fix, but omits a verification step."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The socket-based healthcheck can pass against Postgres's temporary initialization server before TCP connections are available, leaving a startup race."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clearly explains the failure and includes a command to try the fix, but its healthcheck can signal readiness too early."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Provides a robust startup fix and useful operational caveats, but does not explain how to verify success."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Leads with the cause and provides a robust fix with relevant caveats, but lacks a verification step."
+      }
+    },
+    "ranking": [
+      "D",
+      "C",
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 13322,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 768,
+      "reasoning_output_tokens": 409
+    }
+  }
+}

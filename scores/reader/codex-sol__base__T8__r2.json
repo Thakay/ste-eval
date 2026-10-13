@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Trace slow requests to identify the bottleneck.",
+    "Keep prices on an authoritative read path, not a cache, unless an agreed freshness requirement is met.",
+    "No. It changed the earlier answer, withdrawing the Redis TTL recommendation and the \"well under 200 ms\" promise."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,175 @@
+arm,gen,task,judge,kind,text
+base,claude-opus,T5,sol,error,"The socket-based healthcheck can pass against Postgres's temporary initialization server, so it does not reliably prevent the first-start connection race."
+scoped,claude-opus,T5,sol,invented,The db container has no volume; postgres:17 actually declares an anonymous data volume.
+scoped,claude-opus,T5,sol,error,The socket-based healthcheck can pass against the temporary initialization server before Postgres is reachable over TCP.
+scoped,claude-opus,T5,sol,error,"The persistence explanation is imprecise: compose down retains the anonymous volume, but a subsequent up does not automatically reuse it."
+scoped,claude-opus,T7,sol,error,"page=1.5 does not necessarily produce a fractional skip; with the default size of 20, skip is 30."
+base,claude-opus,T7,sol,error,"To use a one-based server, a zero-based mobile client must add 1 to its page, not subtract 1."
+full,claude-opus,T7,sol,error,"The suggested input handling leaves page=Infinity unchanged, allowing an invalid infinite skip to reach the database."
+lite,codex-sol,T5,sol,error,The socket-only health check can pass during PostgreSQL initialization before TCP connections are available.
+scoped,codex-sol,T5,sol,error,The socket-only health check can pass during PostgreSQL initialization before TCP connections are available.
+scoped,claude-opus,T7,sol,invented,"size=1000000 is claimed to fetch the whole table, although the table's size is unknown."
+lite,claude-opus,T7,sol,invented,"size=1000000 is claimed to fetch the full table, although the table's size is unknown."
+base,claude-opus,T7,sol,invented,"size=1000000 is claimed to load the whole table, although the table's size is unknown."
+base,claude-opus,T7,sol,invented,"The endpoint is claimed to let anyone dump all user records, although access controls are unknown."
+base,claude-opus,T7,sol,error,A query rejection does not make this request hang because res.json already sends the response.
+base,claude-opus,T7,sol,error,"The suggested input normalization leaves page=Infinity unchanged, producing an invalid skip."
+base,claude-opus,T7,sol,error,The proposed bad-input rejection tests conflict with the code's normalization behavior.
+scoped,claude-opus,T4,sol,invented,Names the original developer Kay without support in the task.
+scoped,claude-opus,T4,sol,invented,States that nobody knows where customer time zones are stored.
+scoped,claude-opus,T4,sol,error,"Categorically claims plain freezegun cannot reproduce the bug, which depends on the code path and freezing configuration."
+scoped,claude-opus,T4,sol,error,Treats reproduction at one time as confirmation of the failure window.
+base,claude-opus,T4,sol,invented,Names the original developer Kay without support in the task.
+base,claude-opus,T4,sol,error,"The proposed freezegun reproduction does not account for its effect on naive local time, so it may hide the timezone behavior being investigated."
+lite,claude-opus,T4,sol,invented,Names the original developer Kay without support in the task.
+lite,claude-opus,T4,sol,error,Changing TZ while using freezegun does not necessarily exercise system-local datetime.now() behavior.
+lite,claude-opus,T4,sol,error,A failure-window shift after DST would support the Berlin hypothesis but would not confirm it.
+lite,claude-opus,T6,sol,error,An age cutoff alone does not guarantee that uploads in progress are safe.
+lite,claude-opus,T6,sol,error,Deleting a branch also deletes its branch reflog; its commits are not necessarily retained until that reflog expires.
+lite,claude-opus,T6,sol,error,docker system df does not report container log disk usage.
+scoped,claude-opus,T6,sol,invented,The user did not list Docker as a space user.
+scoped,claude-opus,T6,sol,invented,"Nothing cleans uploads/tmp, so it will necessarily fill again."
+scoped,claude-opus,T6,sol,error,A 24-hour age cutoff does not guarantee that files are no longer in use.
+scoped,claude-opus,T6,sol,error,Deleted branches do not retain their branch reflogs for about 90 days; unreachable reflog entries also have a different default expiration.
+scoped,claude-opus,T6,sol,error,Having no commits absent from remote-tracking refs does not establish that unmerged branches are safe to delete.
+scoped,claude-opus,T6,sol,error,Directly truncating Docker-managed log files can interfere with Docker's logging.
+full,claude-opus,T6,sol,invented,Having 31G in uploads/tmp proves that nothing removes old files.
+full,claude-opus,T6,sol,error,"find -mtime +1 selects files at least 48 hours old, which does not match the stated 24-hour cutoff."
+full,claude-opus,T6,sol,error,File age alone does not establish that an upload or later processing job is finished.
+full,claude-opus,T6,sol,error,Ordinary git gc does not necessarily remove the ability to restore a deleted branch; reachable and sufficiently recent objects can remain.
+base,claude-opus,T6,sol,invented,The assistant is on the user's local WSL machine.
+base,claude-opus,T6,sol,invented,The user did not mention Docker.
+base,claude-opus,T6,sol,error,"find -mtime +1 selects files at least 48 hours old, rather than simply files older than one day."
+base,claude-opus,T6,sol,error,Deleting by age does not guarantee that uploads in progress survive.
+base,claude-opus,T6,sol,error,The claim that nothing deleted can be recovered is too broad for Git branches and Docker images.
+base,claude-opus,T8,sol,error,A hit rate above about 95% is not generally required for p95 to improve; that depends on the hit and miss latency distributions and the target.
+base,claude-opus,T8,sol,error,Broken invalidation alone does not extend staleness beyond a correctly enforced 10 minute TTL.
+full,claude-opus,T8,sol,error,The existing p95 of 900 ms does not establish that each cache miss will cost 900 ms.
+scoped,claude-opus,T1,sol,invented,Claims silent backup failures are the most common way to lose data without supporting evidence.
+scoped,claude-opus,T1,sol,error,A restored table with zero rows does not necessarily indicate failure.
+scoped,claude-opus,T1,sol,error,Table counts need not match current production if schema changes occurred after the backup.
+full,claude-opus,T1,sol,error,Table lists need not match current production if schema changes occurred after the backup.
+lite,claude-opus,T1,sol,invented,"Claims the test container has no volume, although the official Postgres 17 image creates an anonymous data volume."
+lite,claude-opus,T1,sol,error,"Cleanup omits docker rm -v, leaving the test container's anonymous data volume behind."
+base,claude-opus,T1,sol,error,"Restore commands run without root access even though the backup directory and files are root-only, so selecting and reading the dump fails."
+base,claude-opus,T1,sol,error,Default pg_restore also returns a nonzero status when errors occur; --exit-on-error makes it stop at the first error.
+base,claude-opus,T1,sol,error,"Table counts need not match current production after schema changes, and row counts can legitimately be equal."
+scoped,claude-opus,T8,sol,error,Reading the live price at checkout does not guarantee correct customer charges or prevent refunds; a changed price must also be communicated and accepted.
+full,claude-opus,T8,sol,error,"Reading the live price at checkout does not protect against every stale-price bug, including discrepancies between the displayed and charged price."
+base,claude-opus,T8,sol,invented,"Attributes the previous incident specifically to a cache becoming a second source of truth, although its cause is unknown."
+base,claude-opus,T8,sol,error,Live checkout pricing does not necessarily make stale displayed prices merely a display problem; price discrepancies can still lead to refunds.
+lite,claude-opus,T8,sol,error,Failed invalidation alone does not extend staleness beyond a correctly enforced 10 minute TTL.
+lite,claude-opus,T8,sol,error,Many different products do not establish that most requests will miss the cache; request frequency and reuse also matter.
+lite,claude-opus,T8,sol,error,"Stale descriptions, images, and specifications can have financial consequences, so calling them categorically safe is incorrect."
+lite,claude-opus,T8,sol,error,Reading the live price at checkout does not guarantee prevention of refunds from displayed and charged price discrepancies.
+scoped,claude-opus,T3,sol,error,pg_dump is not a physical base backup suitable for recovery by replaying archived WAL.
+scoped,claude-opus,T3,sol,error,Managed Postgres is not required for redundancy; self-hosted database failover is also possible.
+lite,claude-opus,T3,sol,invented,Postgres will take 1 to 2 GB of RAM on this VPS.
+lite,claude-opus,T3,sol,error,Managed Postgres does not universally include point-in-time recovery and failover.
+lite,claude-opus,T3,sol,error,Two app servers can improve availability even when the database remains a single point of failure.
+base,claude-opus,T3,sol,invented,The current workload has at least 10x write headroom.
+base,claude-opus,T3,sol,error,sqlsequencereset prints SQL; running the command alone does not reset sequences.
+full,claude-opus,T3,sol,error,"Postgres schema changes commonly acquire locks that can block other operations, even when the changes execute quickly."
+full,claude-opus,T3,sol,error,Moving the database to a separate host does not by itself remove its single point of failure.
+full,claude-opus,T3,sol,error,sqlsequencereset prints SQL; running the command alone does not reset sequences.
+full,claude-opus,T2,sol,error,Rebase can start with uncommitted tracked changes when autostash is enabled.
+lite,claude-opus,T2,sol,error,Rebase can start with uncommitted tracked changes when autostash is enabled.
+lite,claude-opus,T2,sol,error,Pulling after history is rewritten does not necessarily mix histories; Git may refuse until a reconciliation strategy is specified.
+scoped,claude-opus,T2,sol,error,Pulling after history is rewritten does not necessarily mix histories or produce duplicate commits; Git may refuse until a reconciliation strategy is specified.
+lite,claude-opus,T3,sol,error,sqlsequencereset prints SQL; running it alone does not reset sequences.
+lite,claude-opus,T3,sol,error,Sequence resets are not always necessary: Django loaddata normally resets them.
+lite,claude-opus,T3,sol,error,Full-text search alone does not require Postgres; SQLite supports FTS5.
+scoped,claude-opus,T3,sol,error,manage.py sqlsequencereset prints SQL; the answer omits executing that SQL to reset sequences.
+base,claude-opus,T3,sol,error,Recommends IMMEDIATE transactions without explaining that ATOMIC_REQUESTS would serialize read requests too.
+base,claude-opus,T3,sol,error,Recommends synchronous=NORMAL without explaining the possible loss of recent commits after power failure.
+base,claude-opus,T3,sol,error,sqlsequencereset prints SQL; running it alone does not reset sequences.
+full,claude-opus,T3,sol,error,"The single-writer limit can hurt with many short transactions too, not only long transactions."
+full,claude-opus,T3,sol,error,Recommends IMMEDIATE transactions without explaining the interaction with ATOMIC_REQUESTS.
+full,claude-opus,T3,sol,error,Recommends synchronous=NORMAL without explaining the possible loss of recent commits after power failure.
+full,claude-opus,T3,sol,error,Point-in-time recovery alone does not require Postgres; Litestream supports it for SQLite.
+full,claude-opus,T1,sol,error,"The restore-test script exits successfully even when row counts differ, so scheduled checks can report success after a failed comparison."
+full,claude-opus,T1,sol,error,Failures inside the diff process substitutions do not reliably fail the restore test.
+full,claude-opus,T1,sol,error,"Cleanup omits -v, leaving the temporary container's anonymous data volume behind."
+full,claude-opus,T1,sol,error,The manual ls command needs sudo because the backup directory is accessible only to root.
+lite,claude-opus,T1,sol,error,The suggested pg_dumpall command needs container execution or explicit connection settings and output redirection to produce a saved roles backup.
+base,claude-opus,T1,sol,error,"Keeping seven files does not enforce seven-day retention: failed nights preserve older backups, and extra runs can remove backups less than seven days old."
+scoped,claude-opus,T1,sol,invented,The database and backups share one disk; the task establishes the same server but does not specify disk placement.
+scoped,claude-opus,T1,sol,error,Disk-space guidance accounts for seven dumps but omits the additional dump written before old backups are deleted.
+full,claude-opus,T5,sol,error,"The socket-based healthcheck can pass against Postgres's temporary initialization server before TCP connections are available, leaving a startup race."
+scoped,claude-opus,T4,sol,invented,Identifies the note author as Kay.
+scoped,claude-opus,T4,sol,invented,Claims the branch exists exclusively on the author's laptop and is inaccessible to the next agent.
+scoped,claude-opus,T4,sol,invented,Describes the failure window as starting exactly at Berlin midnight.
+scoped,claude-opus,T4,sol,invented,Claims nobody checked CI components for Berlin time.
+scoped,claude-opus,T4,sol,error,"Tells the next agent to recreate the change if the branch is absent remotely, despite the existing local branch."
+scoped,claude-opus,T4,sol,error,Claims three fixed-time probes can confirm the failure window in minutes; they only sample three times.
+scoped,claude-opus,T4,sol,error,Unconditionally recommends timezone-aware datetime expectations before the required due-date semantics are established.
+lite,claude-opus,T4,sol,invented,Identifies the note author as Kay.
+lite,claude-opus,T4,sol,invented,Claims the branch exists exclusively on the author's laptop and cannot be reached by the next agent.
+lite,claude-opus,T4,sol,error,"Treats a one-hour shift after the Berlin DST change as confirmation of the theory, although it would only provide supporting evidence."
+lite,claude-opus,T4,sol,error,"Presents evening scheduling or a wider window as the only explanations for the approximate failure rate, overlooking sampling uncertainty and other causes."
+full,claude-opus,T4,sol,invented,Identifies the note author as Kay.
+full,claude-opus,T4,sol,invented,Claims the branch exists exclusively on the author's laptop and cannot be seen by the next agent.
+full,claude-opus,T4,sol,error,Predicts a specific post-DST failure window from an unconfirmed timing hypothesis.
+full,claude-opus,T4,sol,error,Presents evening scheduling or a wider window as the only explanations for the approximate failure rate.
+base,claude-opus,T4,sol,invented,Identifies the note author as Kay.
+base,claude-opus,T4,sol,invented,Claims the branch exists exclusively on the author's laptop and nobody else can see it.
+base,claude-opus,T4,sol,invented,States that the due date is off by one day when local and UTC dates differ.
+base,claude-opus,T4,sol,invented,"States that a production bug is established, although the notes describe a possible production risk."
+base,claude-opus,T4,sol,error,Treats Berlin time entering CI as something to find rather than a hypothesis to test.
+base,claude-opus,T4,sol,error,Predicts a definite DST shift despite the unconfirmed cause and failure window.
+base,claude-opus,T4,sol,error,Makes regression-test planning depend on an unverified expectation that 22:30 UTC fails and 21:30 UTC passes.
+lite,claude-opus,T6,sol,invented,Claims that 31G in tmp proves cleanup is broken or missing.
+lite,claude-opus,T6,sol,error,"Git retention is oversimplified: unreachable reflog entries normally expire after 30 days, and refs other than branches also retain objects."
+lite,claude-opus,T6,sol,error,Immediate pruning on a live repository can race concurrent Git operations; the plan does not address this.
+lite,claude-opus,T6,sol,error,"Claims deleted branches cannot be recovered after expiry and GC, although their commits may remain reachable through other refs."
+scoped,claude-opus,T6,sol,invented,"Says the user did not list Docker, although the task lists /var/lib/docker."
+scoped,claude-opus,T6,sol,invented,Claims to be running on the user's WSL machine.
+scoped,claude-opus,T6,sol,error,"Recent modification does not establish that a file is an active upload, and an old timestamp does not establish that deletion is safe."
+scoped,claude-opus,T6,sol,error,Changing Docker daemon logging defaults and restarting does not apply those defaults to existing containers; affected containers need recreation.
+scoped,claude-opus,T6,sol,error,A Docker restart is not guaranteed to cause only a momentary app interruption.
+base,claude-opus,T6,sol,invented,Claims the current session is WSL.
+base,claude-opus,T6,sol,error,"Reflog expiry is not always required to reclaim objects after branch deletion, and refs other than branches can retain commits."
+base,claude-opus,T6,sol,error,Immediate pruning on a live repository can race concurrent Git operations; the plan does not address this.
+base,claude-opus,T6,sol,error,The reflog-expiry and GC commands do not specify /srv/app or establish that it is the working directory.
+full,claude-opus,T6,sol,invented,Claims that 31G in tmp proves nothing removes old files there.
+full,claude-opus,T6,sol,error,"Uploads in progress do not necessarily have fresh modification timestamps, so age alone cannot protect them."
+full,claude-opus,T6,sol,error,No gain after deletion does not prove a process holds the files open; other causes include concurrent disk growth and snapshots.
+full,claude-opus,T6,sol,error,Reflog expiry is not always a prerequisite for reclaiming objects after branch deletion.
+base,claude-opus,T5,opus,error,"pg_isready without -h uses the Unix socket, which can pass during the temporary init server, so 'healthy only once Postgres accepts connections' overstates what the check guarantees"
+scoped,claude-opus,T5,opus,error,pg_isready without -h checks the Unix socket and can pass during first-run init
+base,codex-sol,T7,opus,error,Calls the zero-based change correct without flagging that existing clients sending page=1 will silently skip the first page
+scoped,codex-sol,T7,opus,error,Says the zero-based change matches the intent without flagging the break for existing clients
+base,claude-opus,T7,opus,error,"Says the request 'may hang' on a failed query, but res.json has already sent {} by then, so the request does not hang"
+scoped,claude-opus,T4,opus,invented,"Says the freezegun patch is part of the current code state, but the notes only say freezegun was tried"
+scoped,claude-opus,T4,opus,invented,'Nobody knows this yet' about where customer time zones are stored is not in the notes
+base,claude-opus,T4,opus,invented,'off by one day' for Asia users is more specific than the notes
+base,claude-opus,T4,opus,error,"Suggests freezegun to reproduce the boundary, which may not trigger the bug if the Berlin time comes from the process or DB time zone"
+full,claude-opus,T4,opus,invented,"Calls #billing a Slack channel, which the notes do not say"
+full,claude-opus,T4,opus,error,Labels the cause 'Known cause' in the doc while the reply itself says that cause may be incomplete
+lite,claude-opus,T4,opus,error,Running a freezegun-frozen test under different TZ values may not change naive now() as the steps imply
+base,claude-opus,T6,opus,error,"`-mtime +1` matches files at least 2 full days old, not files older than 1 day as stated"
+full,claude-opus,T6,opus,error,"`-mtime +1` keeps about 48 hours of files, not 24 as the text implies"
+scoped,claude-opus,T6,opus,error,"Phase 4 says to delete unmerged branches when nothing is unpushed, but `-d` refuses them, which contradicts its own no `-D` rule"
+scoped,claude-opus,T6,opus,error,"Says deleted-branch commits are kept about 90 days via reflogs, but the branch reflog is deleted with the branch"
+lite,claude-opus,T8,opus,error,Mislabels hit-rate concern as 'read-to-write ratio'
+lite,claude-opus,T8,opus,error,"Lists 'if the price lookup is the slow part' under unknowns as a statement, which reads oddly"
+lite,claude-opus,T1,opus,error,"Cleanup uses docker rm -f without -v, so the test container's anonymous data volume stays on disk after each test"
+base,claude-opus,T1,opus,error,"Restore test reads the root-only backup folder (ls and the < redirect) without sudo or a root shell, so it fails for a normal user"
+base,claude-opus,T1,opus,error,"journalctl is run without sudo, which may show no entries for a normal user"
+scoped,claude-opus,T8,opus,invented,"Assumes the earlier cache used a 10 minute TTL, then says 'a 10 minute TTL alone cannot do that'. The past cache's TTL was never stated."
+scoped,claude-opus,T8,opus,error,"Treats the newly proposed 10 minute TTL as the cause of the past incident, which is a reasoning slip."
+full,claude-opus,T3,opus,error,Overstates that most Postgres schema changes do not block; many ALTERs still take a brief ACCESS EXCLUSIVE lock
+full,claude-opus,T1,opus,error,"Restore test prints 'Row counts differ' but still exits 0, so cron or an alert cannot detect a failed comparison"
+full,claude-opus,T1,opus,error,"Restore test has no --no-owner, so it fails if extra roles exist (the answer does mention this)"
+lite,claude-opus,T1,opus,error,"Restore step has no --exit-on-error, so errors can scroll by and the reader must judge them by hand"
+lite,claude-opus,T1,opus,error,Test container hard-codes postgres:17 and relies on the reader to swap in the image from step 2
+base,claude-opus,T1,opus,error,"Disaster restore uses --clean with --exit-on-error but no --single-transaction, so a failure can leave the live database half-restored"
+full,claude-opus,T5,opus,error,"Healthcheck pg_isready without -h localhost uses the Unix socket, so it can report ready during the Postgres image's temporary init server and let api connect too early on first start"
+scoped,claude-opus,T4,opus,error,"Suggests freezegun to pin the clock and reproduce the failure, but freezegun returns a naive frozen time with no local offset, so it likely hides the bug (the notes say the test passed under freezegun)."
+scoped,claude-opus,T4,opus,error,"Step 9 says to update the two failing tests no matter what Priya decides, outside the UTC branch of the decision."
+base,claude-opus,T4,opus,error,"Step 1 expects freezegun with time frozen at 22:30 UTC to make the test fail, but freezegun removes the local-time offset, and the notes say the test passed under freezegun."
+base,codex-sol,T1,opus,error,"Restore block starts with 'set -e' in the interactive root shell, so any failing command closes that shell"
+scoped,claude-opus,T6,opus,error,The KEEP regex pattern breaks if KEEP is empty or holds several names without pipe separators (minor)
+base,claude-opus,T6,opus,error,"Recommends docker image prune -a with a 7-day filter, which can remove rollback images before the user confirms how far back to keep"
+full,claude-opus,T6,opus,error,"Runs lsof without sudo, so it can miss files held open by the app user"
+full,claude-opus,T6,opus,error,Gives the tmp delete command with no file-list preview step

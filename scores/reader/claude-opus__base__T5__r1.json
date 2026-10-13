@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "That container itself, not your machine.",
+    "db (the Compose service name).",
+    "No. depends_on only waits for the db container to start, not for Postgres to be ready."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

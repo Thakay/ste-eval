@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T3",
+  "rep": 3,
+  "answers": [
+    "No. The text says keep SQLite for now if response times and lock errors are acceptable.",
+    "Lock errors or slow writes continue after you shorten transactions, or adding an app server on another machine.",
+    "You must maintain another service, manage connections, monitor resource use, and maintain backups."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

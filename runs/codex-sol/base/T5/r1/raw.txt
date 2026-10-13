@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Inside the API container, `localhost` means **the API container itself**. Postgres is in another container, reachable by its Compose service name: **`db`**. Change the URL to `postgres://app:secret@db:5432/app`.\n\nThere is also a startup race: plain `depends_on` starts the database container first but does not wait for Postgres to accept connections. Add a health check and wait for it:\n\n```yaml\nservices:\n  api:\n    build: .\n    environment:\n      DATABASE_URL: postgres://app:secret@db:5432/app\n    depends_on:\n      db:\n        condition: service_healthy\n\n  db:\n    image: postgres:17\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U app -d app\"]\n      interval: 5s\n      timeout: 5s\n      retries: 10\n```\n\nYour local development setup can keep using `localhost`; Compose needs `db`. No published database port is required for communication between these services.\n\nFor resilience during database restarts, also add bounded connection retries in the API.\n\nGodspeed, Spartan."}}
+{"type":"turn.completed","usage":{"input_tokens":10912,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":642,"reasoning_output_tokens":381}}
+
+--- STDERR ---
+Reading additional input from stdin...

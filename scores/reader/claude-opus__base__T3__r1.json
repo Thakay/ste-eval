@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says not to migrate just because the contractor says now. Move before the second app server goes live.",
+    "The second app server going live. SQLite cannot be safely shared across two machines, so Postgres must be in place before then.",
+    "Operations: it is another service to tune, back up, and upgrade. Managed Postgres removes most of this for a monthly fee."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

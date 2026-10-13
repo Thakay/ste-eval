@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Assume that your feature branch has three commits that are not on `main`: `F1`, `F2`, and `F3`.\n\nIf `main` has new commits, `git rebase main` does these steps:\n\n1. Uses the last commit on `main` as the new starting point.\n2. Applies the changes from `F1`, then `F2`, then `F3`.\n3. Moves your feature branch to the last new commit.\n\nThe replacement commits have new commit IDs. Your feature branch now includes the changes from `main` and your three commits. The `main` branch does not change.\n\nThe command uses your **local** `main` branch. It does not get new commits from the remote repository.\n\nIf a conflict occurs, Git stops. Correct the files, run `git add <file>`, then run `git rebase --continue`. Use `git rebase --abort` to return to the state before the rebase.\n\nDo not use rebase in these conditions:\n\n- Other developers use your commits as the starting point for their work, unless you agree on how to update their branches.\n- You must keep the original commit IDs or the original branch history.\n\nIn these conditions, use `git merge main`. It keeps the existing commits. Rebase is useful for a private feature branch before you share its commits."}}
+{"type":"turn.completed","usage":{"input_tokens":10605,"cached_input_tokens":8832,"cache_write_input_tokens":0,"output_tokens":1834,"reasoning_output_tokens":1552}}
+
+--- STDERR ---
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/codex-bare-home"))
+Reading additional input from stdin...

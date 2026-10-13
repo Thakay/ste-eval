@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 3,
+  "answers": [
+    "No. Schedule the move as a planned project over the next 1 to 3 months, finished before the second app server.",
+    "Adding a second app server forces the move, since SQLite cannot be safely shared across hosts.",
+    "Ops burden: you must handle backups, upgrades, tuning, and connection management."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

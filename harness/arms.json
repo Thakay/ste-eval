@@ -1,0 +1,6 @@
+{
+  "base": {"rules_file": null, "label": "Baseline: current setup only"},
+  "lite": {"rules_file": "arms/ste-lite.md", "label": "STE-Lite: compact rules, always on"},
+  "scoped": {"rules_file": "arms/ste-scoped.md", "label": "STE-Scoped: strict for procedures and docs, relaxed for discussion"},
+  "full": {"rules_file": "arms/ste-full.md", "label": "STE-Full: long rule set, always on"}
+}

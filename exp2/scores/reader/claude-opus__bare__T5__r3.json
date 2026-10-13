@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T5",
+  "rep": 3,
+  "answers": [
+    "The api container's own loopback interface, meaning the container itself, not the host or other services.",
+    "The service name db, for example postgres://app:secret@db:5432/app.",
+    "No. depends_on only waits for the db container to start, not for Postgres to be ready."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

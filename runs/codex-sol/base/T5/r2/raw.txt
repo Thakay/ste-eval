@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"When you run locally, `localhost` points to your machine. Inside Compose, it points to the **API container itself**, where PostgreSQL is not running. Use the database service name, `db`, as the hostname.\n\nThere is also a startup race: `depends_on` starts the database container first but does not wait for PostgreSQL to accept connections. Fix both with:\n\n```yaml\nservices:\n  api:\n    build: .\n    environment:\n      DATABASE_URL: postgres://app:secret@db:5432/app\n    depends_on:\n      db:\n        condition: service_healthy\n\n  db:\n    image: postgres:17\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -h 127.0.0.1 -U app -d app\"]\n      interval: 5s\n      timeout: 5s\n      retries: 10\n```\n\nThe health check runs inside the database container, so its `127.0.0.1` is correct. Compose provides networking between services automatically; no published database port is needed for this connection.\n\nFor resilience after startup, also add database connection retries in the API.\n\nGodspeed, Spartan."}}
+{"type":"turn.completed","usage":{"input_tokens":10912,"cached_input_tokens":8832,"cache_write_input_tokens":0,"output_tokens":986,"reasoning_output_tokens":718}}
+
+--- STDERR ---
+Reading additional input from stdin...

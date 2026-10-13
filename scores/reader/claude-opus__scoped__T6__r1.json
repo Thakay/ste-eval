@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not really. Branches are tiny ref files, so deleting them frees almost no space; the commits stay about 90 days via reflogs.",
+    "The biggest target is /srv/app/uploads/tmp (31G), with Docker (48G) also a large target.",
+    "Access to the prod box (SSH or pasted Phase 1 output), trunk branch name, deploy branch, branches to keep, what writes to uploads/tmp, 24h age safety, Docker prune scope, backup state, and a separate go per phase."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

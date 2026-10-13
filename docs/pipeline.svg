@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 660" width="640" height="660" role="img" aria-labelledby="t d">
+  <title id="t">How each reply is made and scored</title>
+  <desc id="d">A task runs in a fresh folder holding the rule file under test, through a headless CLI. The reply then goes to two blind judges, a reading quiz and rule metrics. A paired comparison with bootstrap intervals combines the scores.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #f7f6f2; stroke: #e7e6e1; stroke-width: 1.5; }
+    .hot { fill: #fff4ea; stroke: #ee8a3c; stroke-width: 1.5; }
+    .ttl { font: 600 15px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #141414; }
+    .txt { font: 400 12.5px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: #4a4a46; }
+    .num { font: 600 12.5px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: #a14f0a; }
+    .lane { font: 600 11px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: #6b6b67; letter-spacing: 0.06em; }
+    .wire { stroke: #9a988f; stroke-width: 1.6; fill: none; }
+    .head { fill: #9a988f; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0b0b; }
+      .box { fill: #131312; stroke: #2e2e2b; }
+      .hot { fill: #1f160e; stroke: #f0953f; }
+      .ttl { fill: #f2f2ee; }
+      .txt { fill: #c9c9c3; }
+      .num { fill: #f5a95f; }
+      .lane { fill: #8f8f89; }
+      .wire { stroke: #6f6e68; }
+      .head { fill: #6f6e68; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head" d="M0 0 L10 5 L0 10 z"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="640" height="660" rx="10"/>
+
+  <text class="lane" x="20" y="30">MAKE ONE REPLY</text>
+  <text class="lane" x="620" y="30" text-anchor="end">round two: 8 tasks x 2 arms x 2 models x 3 runs</text>
+
+  <rect class="box" x="20" y="44" width="280" height="104" rx="8"/>
+  <text class="num" x="36" y="70">1</text><text class="ttl" x="52" y="70">Task</text>
+  <text class="txt" x="36" y="94">a prompt modeled on agent work</text>
+  <text class="txt" x="36" y="113">a hidden fact checklist</text>
+  <text class="txt" x="36" y="132">a 3-question quiz key</text>
+
+  <rect class="hot" x="340" y="44" width="280" height="104" rx="8"/>
+  <text class="num" x="356" y="70">2</text><text class="ttl" x="372" y="70">Fresh folder</text>
+  <text class="txt" x="356" y="94">an empty dir for every run</text>
+  <text class="txt" x="356" y="113">the rule under test goes in</text>
+  <text class="txt" x="356" y="132">as CLAUDE.md or AGENTS.md</text>
+
+  <path class="wire" d="M300 96 H336" marker-end="url(#a)"/>
+  <path class="wire" d="M480 148 V164 H160 V178" marker-end="url(#a)"/>
+
+  <rect class="box" x="20" y="182" width="280" height="104" rx="8"/>
+  <text class="num" x="36" y="208">3</text><text class="ttl" x="52" y="208">Headless CLI</text>
+  <text class="txt" x="36" y="232">claude -p or codex exec</text>
+  <text class="txt" x="36" y="251">xhigh effort, bare settings</text>
+  <text class="txt" x="36" y="270">no tools, no web</text>
+
+  <rect class="box" x="340" y="182" width="280" height="104" rx="8"/>
+  <text class="num" x="356" y="208">4</text><text class="ttl" x="372" y="208">Reply and receipts</text>
+  <text class="txt" x="356" y="232">output.md, plus thinking and</text>
+  <text class="txt" x="356" y="251">output tokens, seconds and</text>
+  <text class="txt" x="356" y="270">tool calls in meta.json</text>
+
+  <path class="wire" d="M300 234 H336" marker-end="url(#a)"/>
+
+  <text class="lane" x="20" y="318">SCORE IT THREE WAYS</text>
+  <path class="wire" d="M480 286 V330 H115 V344" marker-end="url(#a)"/>
+  <path class="wire" d="M320 330 V344" marker-end="url(#a)"/>
+  <path class="wire" d="M525 330 V344" marker-end="url(#a)"/>
+
+  <rect class="hot" x="20" y="348" width="190" height="122" rx="8"/>
+  <text class="num" x="34" y="374">5</text><text class="ttl" x="50" y="374">Blind judges</text>
+  <text class="txt" x="34" y="398">Opus + gpt-6.1-sol</text>
+  <text class="txt" x="34" y="417">shuffled as A, B</text>
+  <text class="txt" x="34" y="436">fact checklist,</text>
+  <text class="txt" x="34" y="455">ratings, a ranking</text>
+
+  <rect class="box" x="225" y="348" width="190" height="122" rx="8"/>
+  <text class="num" x="239" y="374">6</text><text class="ttl" x="255" y="374">Reading quiz</text>
+  <text class="txt" x="239" y="398">Haiku answers from</text>
+  <text class="txt" x="239" y="417">the reply alone</text>
+  <text class="txt" x="239" y="436">Sonnet grades it</text>
+  <text class="txt" x="239" y="455">against the key</text>
+
+  <rect class="box" x="430" y="348" width="190" height="122" rx="8"/>
+  <text class="num" x="444" y="374">7</text><text class="ttl" x="460" y="374">Rule metrics</text>
+  <text class="txt" x="444" y="398">spaCy: sentence</text>
+  <text class="txt" x="444" y="417">length, passive,</text>
+  <text class="txt" x="444" y="436">-ing, tenses, grade</text>
+  <text class="txt" x="444" y="455">level, prose words</text>
+
+  <path class="wire" d="M115 470 V496 H525 V470"/>
+  <path class="wire" d="M320 470 V526" marker-end="url(#a)"/>
+
+  <rect class="hot" x="20" y="530" width="600" height="110" rx="8"/>
+  <text class="num" x="36" y="556">8</text><text class="ttl" x="52" y="556">Paired comparison (compare.py)</text>
+  <text class="txt" x="36" y="580">rule minus no rule, matched by task, run and judge</text>
+  <text class="txt" x="36" y="599">bootstrap 95% intervals from 4,000 resamples</text>
+  <text class="txt" x="36" y="618">claim only what both judges back</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T4",
+  "rep": 2,
+  "answers": [
+    "NOT STATED",
+    "Priya, the billing owner, must answer whether due dates should use customer local time or UTC before anything is merged.",
+    "NOT STATED"
+  ],
+  "scores": [
+    0,
+    1,
+    0
+  ]
+}

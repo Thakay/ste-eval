@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says keep SQLite for now and not to move yet.",
+    "NOT STATED",
+    "Postgres adds memory use, server configuration, and maintenance."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

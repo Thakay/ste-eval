@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not much. Deleting git branches usually releases little space; the text says the 31 GB temporary directory is the main target.",
+    "The 31 GB temporary directory.",
+    "The server address and an approved access method; confirmation that temp files can be permanently deleted or a minimum file age; info on active uploads and approval to stop them if needed; the release branch name, branches to keep, and the rule for \"old\"."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

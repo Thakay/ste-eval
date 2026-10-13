@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "Yes, the hashes change. Rebased commits get new commit IDs because their position in the history has changed.",
+    "Do not rebase when other developers already use those commits, or when you must keep the original commit IDs or branch history. Use git merge main instead.",
+    "Run git rebase --abort to cancel the operation and return the branch to its previous state."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

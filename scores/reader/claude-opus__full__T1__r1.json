@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "A root cron job runs /usr/local/bin/pg-backup.sh, which uses docker exec to run pg_dump in app-db.",
+    "The find command in pg-backup.sh deletes files matching app_*.dump with -mtime +6, meaning 7 or more days old.",
+    "On a temporary container (restore-test) started from the same image as production, not on production itself."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

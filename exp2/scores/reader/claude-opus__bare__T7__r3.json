@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T7",
+  "rep": 3,
+  "answers": [
+    "The response has every users field serialized as {}, because the missing await leaves users as a Promise.",
+    "The page size cap of Math.min(..., 100) was removed, so any size value is accepted.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

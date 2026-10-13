@@ -1,0 +1,107 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T8",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "full",
+    "C": "lite",
+    "D": "base"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Clearly corrects the unsupported recommendation and explains price correctness risks, but gives no concrete optimization that avoids caching."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Provides a clear decision and useful next steps, though its database fix and future price freshness requirements remain broad."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Correctly withdraws the recommendation and separates stable fields from prices, but leaves performance fixes and freshness enforcement unspecified."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Combines a clear revised decision with tracing, concrete alternatives, authoritative price reads, and the limits of checkout validation."
+      }
+    },
+    "ranking": [
+      "D",
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12243,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 802,
+      "reasoning_output_tokens": 462
+    }
+  }
+}

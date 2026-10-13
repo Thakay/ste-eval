@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "Cron runs /usr/local/sbin/backup-app-db, which uses docker exec with pg_dump to create the file.",
+    "A find command with -mtime +6 deletes completed app-*.dump files older than seven days, after a new backup succeeds.",
+    "In a separate, disposable Postgres 17 container, started with --network none, not on production."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

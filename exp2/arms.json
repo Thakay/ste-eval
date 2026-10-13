@@ -1,0 +1,4 @@
+{
+  "bare": {"rules_file": null, "label": "Bare: vanilla CLI, no personal instructions"},
+  "oneliner": {"rules_file": "exp2/oneliner.md", "label": "Bare plus one line: Speak only in ASD-STE100"}
+}

@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "base",
+  "task": "T7",
+  "type": "code-review",
+  "rep": 1,
+  "seconds": 26.2,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10837,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 497,
+    "reasoning_output_tokens": 331
+  }
+}

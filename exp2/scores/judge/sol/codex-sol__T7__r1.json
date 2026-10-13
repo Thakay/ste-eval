@@ -1,0 +1,65 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T7",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Clear, concrete fixes for two regressions, but it misses client compatibility and input validation."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Easy to understand and act on, but it misses client compatibility and input validation."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 11616,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 353,
+      "reasoning_output_tokens": 186
+    }
+  }
+}

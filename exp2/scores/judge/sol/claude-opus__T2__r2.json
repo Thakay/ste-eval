@@ -1,0 +1,69 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T2",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Saying nothing points to the original commits is inaccurate: reflogs and often ORIG_HEAD still reference them."
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Clear diagrams and practical guidance cover the full task, though the recovery advice should warn that reset --hard discards uncommitted changes."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "--force-with-lease checks whether the remote branch matches its expected value, not whether it contains commits you lack."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "The ordered explanation is easy to follow, but awkward phrasing and an incorrect explanation of --force-with-lease weaken it."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12865,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 585,
+      "reasoning_output_tokens": 355
+    }
+  }
+}

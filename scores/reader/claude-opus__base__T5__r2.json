@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "It points to the api container itself, not your machine.",
+    "The host should be db, the service name on the shared compose network.",
+    "No. depends_on only waits for the db container to start, not for Postgres to accept connections."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

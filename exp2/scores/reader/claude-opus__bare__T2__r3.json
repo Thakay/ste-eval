@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T2",
+  "rep": 3,
+  "answers": [
+    "No. Replayed commits get new hashes because their parent commit changes.",
+    "When others built on your commits, on shared branches, with heavy conflicts, or when the team prefers merges.",
+    "Run git rebase --abort, which restores everything to how it was before the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

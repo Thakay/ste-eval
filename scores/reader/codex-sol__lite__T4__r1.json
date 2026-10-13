@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T4",
+  "rep": 1,
+  "answers": [
+    "No. The text says the developer has not pushed branch fix/invoice-tz.",
+    "Priya must answer whether due dates should use customer local time or UTC. Nothing merges until she answers.",
+    "test_late_fee and test_reminder_email fail with the fix, because they expect naive datetimes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

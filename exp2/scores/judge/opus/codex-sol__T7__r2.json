@@ -1,0 +1,93 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T7",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 5,
+        "note": "Clear, fluent, and correct on the missing await and the removed size cap, with a useful point about error propagation, but it misses the breaking change for clients that send page=1 and the lack of input validation."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 2,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 5,
+        "note": "Very easy to read and correct on the two issues it finds, but its short sentences feel choppy, and it misses the client contract break and input validation, with less context than A."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4844,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 647,
+      "output_tokens_details": {
+        "thinking_tokens": 322
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 4844,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 647,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 4844,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4844
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0518088
+  }
+}

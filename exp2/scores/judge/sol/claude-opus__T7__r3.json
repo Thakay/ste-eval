@@ -1,0 +1,70 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T7",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Covers every finding with concrete fixes and provides a coherent implementation that rejects invalid input."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "Claims size=1000000 dumps the whole users table, although the table size is unknown and the query still has a limit."
+        ],
+        "errors": [
+          "The suggested validation leaves page=Infinity unchanged, allowing an invalid database offset.",
+          "Negative take values can produce valid reverse pagination in Prisma, rather than only empty or invalid results."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Identifies all key issues and recommends changes, but overstates the query impact and offers incomplete input validation."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 708,
+      "reasoning_output_tokens": 477
+    }
+  }
+}

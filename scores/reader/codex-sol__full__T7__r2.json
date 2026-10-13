@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "The response now returns a Promise instead of user records, because the `await` on `db.users.findMany` was removed. `res.json` therefore does not return the user records.",
+    "The 100-user cap on `size`, which was `Math.min(Number(req.query.size ?? 20), 100)`, was removed.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

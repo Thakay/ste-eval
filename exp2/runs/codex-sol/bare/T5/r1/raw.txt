@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Inside the `api` container, `localhost` means **the API container itself**, not your machine or the Postgres container. Compose makes services reachable by their service names, so use **`db:5432`**.\n\nAlso, your current `depends_on` starts the database container first but doesn’t wait for PostgreSQL to accept connections. Fix both issues:\n\n```yaml\nservices:\n  api:\n    build: .\n    environment:\n      DATABASE_URL: postgres://app:secret@db:5432/app\n    depends_on:\n      db:\n        condition: service_healthy\n\n  db:\n    image: postgres:17\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n      POSTGRES_DB: app\n    healthcheck:\n      test: [\"CMD\", \"pg_isready\", \"-U\", \"app\", \"-d\", \"app\"]\n      interval: 5s\n      timeout: 5s\n      retries: 10\n```\n\nRun `docker compose up --build` after saving the change. You don’t need to publish Postgres’s port for communication between these containers.\n\nKeep `localhost` in your local development configuration if Postgres is reachable there. For resilience, the API should also retry database connections with backoff, since the database can restart after startup."}}
+{"type":"turn.completed","usage":{"input_tokens":10774,"cached_input_tokens":8832,"cache_write_input_tokens":0,"output_tokens":551,"reasoning_output_tokens":276}}
+
+--- STDERR ---
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/codex-bare-home"))
+Reading additional input from stdin...

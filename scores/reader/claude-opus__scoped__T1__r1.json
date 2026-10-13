@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "scoped",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "The script /usr/local/bin/backup-app-db.sh runs pg_dump inside app-db through docker exec.",
+    "A find command in the script deletes app_*.dump files that are 7 days old or older.",
+    "In a throwaway test container named app-db-restore-test, never against the production app-db."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

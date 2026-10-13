@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "pg_dump, run through docker exec in container app-db with the -Fc custom format.",
+    "The nightly script runs find -delete on dump files with mtime older than 6 days.",
+    "In a separate test container started from the production image, with no network."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

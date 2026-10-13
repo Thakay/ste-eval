@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T4",
+  "rep": 2,
+  "answers": [
+    "NOT STATED",
+    "Priya must answer whether due dates should use customer local time or UTC; nothing merges until she answers.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

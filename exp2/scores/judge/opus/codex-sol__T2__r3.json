@@ -1,0 +1,93 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T2",
+  "rep": 3,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "The before/after diagram makes the replay and new commit IDs easy to see, and it notes that a force push is needed, but it never recommends --force-with-lease."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 3,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "The numbered steps and very plain English suit ESL readers, but it has no diagram, reads a bit stiff, and does not mention force pushing at all."
+      }
+    },
+    "ranking": [
+      "A",
+      "B"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5226,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 775,
+      "output_tokens_details": {
+        "thinking_tokens": 464
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5226,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 775,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5226,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5226
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0574248
+  }
+}

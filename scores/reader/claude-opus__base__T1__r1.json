@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "A `docker exec` running `pg_dump -Fc` writes the backup file.",
+    "A `find` command deletes files matching the pattern with mtime older than six days, via `-delete`.",
+    "In a throwaway container, `app-db-restore-test`, built from the same image as `app-db`."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

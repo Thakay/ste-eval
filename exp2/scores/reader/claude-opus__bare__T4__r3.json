@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T4",
+  "rep": 3,
+  "answers": [
+    "NOT STATED",
+    "Priya (billing domain owner) must answer whether invoice due dates should be customer local time or UTC, before anything is merged.",
+    "test_late_fee and test_reminder_email"
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

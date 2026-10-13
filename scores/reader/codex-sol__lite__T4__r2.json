@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T4",
+  "rep": 2,
+  "answers": [
+    "NOT STATED",
+    "Priya must answer the time zone question (customer local time or UTC) in #billing before anything is merged.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

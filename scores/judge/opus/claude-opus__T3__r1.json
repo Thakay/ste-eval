@@ -1,0 +1,141 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T3",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "base",
+    "B": "scoped",
+    "C": "full",
+    "D": "lite"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 3,
+        "overall": 8,
+        "note": "Rich and accurate, with good questions for the contractor and a practical prep list, but idioms like 'make the switch boring' and 'better-trodden' plus the off-tone warrior sign-off hurt ESL readers and polish."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Verdict first, a complete tradeoff table, ready-to-paste config with the synchronous caveat, a restore test, clear switch triggers, and an explicit statement of what it cannot see; only the odd warrior closing detracts."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Overstates that most Postgres schema changes do not block; many ALTERs still take a brief ACCESS EXCLUSIVE lock"
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Very clear plain English, with a strong section on the hidden cost of data and behavior differences and concrete triggers, though it never notes that the Django ORM makes the code side of the switch easier."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Correct, well ordered, and states its assumption, but it gives less detail on migration pitfalls and no ready config, and the warrior sign-off is out of place."
+      }
+    },
+    "ranking": [
+      "B",
+      "C",
+      "A",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 10136,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 2186,
+      "output_tokens_details": {
+        "thinking_tokens": 1458
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 10136,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2186,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 10136,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 10136
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.1249248
+  }
+}

@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"When you run `git rebase main` on your feature branch, Git:\n\n1. Finds the common commit between your feature branch and `main`.\n2. Uses the last commit on your local `main` branch as the new starting point.\n3. Applies the changes from your 3 feature commits, one at a time, in their original order.\n\nThis usually creates 3 new commits with new commit IDs. Your feature branch now includes the changes from `main`, followed by your changes. The `main` branch does not change. This command does not get updates from the remote repository.\n\nIf Git finds a conflict, it stops. Correct the files, use `git add`, then run `git rebase --continue`. To cancel the operation, run `git rebase --abort`.\n\nDo not use rebase when other developers have used your commits as the basis for their work. The new commit IDs can cause problems when you combine the branches. Use `git merge main` instead.\n\nAlso, do not use rebase if your team must keep the original commit history."}}
+{"type":"turn.completed","usage":{"input_tokens":10605,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1256,"reasoning_output_tokens":1034}}
+
+--- STDERR ---
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/codex-bare-home"))
+Reading additional input from stdin...

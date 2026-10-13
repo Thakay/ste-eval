@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "No. Rebase creates replacement commits with new commit IDs because their parents changed.",
+    "Avoid rebase when other developers depend on those commits, or when you need to preserve the branch's merge history.",
+    "Run git rebase --abort to cancel the rebase and restore your branch."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

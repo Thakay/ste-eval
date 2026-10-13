@@ -1,0 +1,97 @@
+{
+  "judge": "opus",
+  "gen": "codex-sol",
+  "task": "T4",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 2,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Covers every fact accurately and leads with the merge blocker, but it never names the suspected timezone mismatch as the hypothesis, and the very short, flat sentences read robotically."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Opens with a clear summary of the suspected cause and the bolded blocker, uses labeled bullets that scan fast, and gives sensible next steps such as reproducing the failure window, though a few phrases ('timezone semantics', 'regression coverage') are harder for ESL readers."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5904,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1130,
+      "output_tokens_details": {
+        "thinking_tokens": 755
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5904,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1130,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 5904,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5904
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.0699488
+  }
+}

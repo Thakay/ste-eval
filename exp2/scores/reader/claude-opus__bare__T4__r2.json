@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T4",
+  "rep": 2,
+  "answers": [
+    "No, the fix branch fix/invoice-tz was never pushed; it exists only on the original investigator's laptop.",
+    "Priya, the billing owner, must answer whether due dates are customer-local or UTC before anything is merged.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

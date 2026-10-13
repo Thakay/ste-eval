@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "Docker runs pg_dump inside the app-db container, writing the custom-format dump file.",
+    "A find command deletes files named app_*.dump whose modification time is more than 6 days old.",
+    "On a throwaway test container named app-db-restoretest, not on the live app-db container."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

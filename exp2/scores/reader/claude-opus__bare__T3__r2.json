@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "NOT STATED",
+    "The second app server, since SQLite cannot be safely shared across hosts.",
+    "Moderate ops burden: tuning, upgrades, backups, and connection management (low if managed)."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

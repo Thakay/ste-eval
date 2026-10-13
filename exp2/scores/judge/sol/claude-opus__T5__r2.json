@@ -1,0 +1,67 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T5",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "bare",
+    "B": "oneliner"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Postgres restarting does not necessarily crash the API; that depends on the application's connection handling."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Clearly explains both startup problems and provides the fix, but omits verification and overstates what happens when Postgres restarts."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Provides a clear explanation and complete fix with a rerun step, though verification would be stronger with an expected success signal."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12314,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 510,
+      "reasoning_output_tokens": 310
+    }
+  }
+}

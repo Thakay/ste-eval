@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T1",
+  "rep": 3,
+  "answers": [
+    "A shell script, /usr/local/bin/pg-backup-app.sh, runs pg_dump inside the app-db container and writes a custom-format dump.",
+    "The script's find command deletes files matching the dump pattern with -mtime +6, so files 7 or more days old are removed.",
+    "The restore test should happen in a throwaway container using the same image as production, never touching production."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

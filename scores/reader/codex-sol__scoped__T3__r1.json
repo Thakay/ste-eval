@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says to keep SQLite for now if it meets targets, and plan PostgreSQL before adding a second app server.",
+    "Lock errors, failed writes, unacceptable peak latency, longer background transactions, sustained WAL growth, or a firm date for a second app server.",
+    "Postgres requires another service with configuration, monitoring, backups, and upgrades. It also shares VPS memory, CPU, and storage with Django."
+  ],
+  "scores": [
+    1,
+    0,
+    1
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T3",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "scoped",
+    "C": "base",
+    "D": "full"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "sqlsequencereset prints SQL; running it alone does not reset sequences.",
+          "Sequence resets are not always necessary: Django loaddata normally resets them.",
+          "Full-text search alone does not require Postgres; SQLite supports FTS5."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "A thorough recommendation with useful configuration caveats, but some migration instructions are incorrect and the memory estimate is too confident."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "manage.py sqlsequencereset prints SQL; the answer omits executing that SQL to reset sequences."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "The strongest practical handoff, with clear operational tradeoffs and a staged migration, although it never explicitly explains Django's portability advantage."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Recommends IMMEDIATE transactions without explaining that ATOMIC_REQUESTS would serialize read requests too.",
+          "Recommends synchronous=NORMAL without explaining the possible loss of recent commits after power failure.",
+          "sqlsequencereset prints SQL; running it alone does not reset sequences."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 3,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "Covers the full checklist, but its configuration advice omits important caveats and its migration-time and memory assurances exceed the available evidence."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The single-writer limit can hurt with many short transactions too, not only long transactions.",
+          "Recommends IMMEDIATE transactions without explaining the interaction with ATOMIC_REQUESTS.",
+          "Recommends synchronous=NORMAL without explaining the possible loss of recent commits after power failure.",
+          "Point-in-time recovery alone does not require Postgres; Litestream supports it for SQLite."
+        ],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 2,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 6,
+        "note": "Easy to scan, but its categorical opening conflicts with its earlier-migration conditions and several simplified claims could lead to poor decisions."
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 15129,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2165,
+      "reasoning_output_tokens": 1420
+    }
+  }
+}

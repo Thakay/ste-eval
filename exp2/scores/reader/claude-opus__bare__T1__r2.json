@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "Backups are created by `pg_dump` run inside the container via `docker exec`, with output streamed to a `.dump` file on the host.",
+    "The script deletes files matching the backup names with `find ... -mtime +6 -delete`, after each successful backup, so only roughly the newest 7 are kept.",
+    "The restore test runs in a throwaway container using the same image as production, named app-db-restore-test, not on the production database."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

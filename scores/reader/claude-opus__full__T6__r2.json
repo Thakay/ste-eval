@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not much. Branch deletion frees almost nothing; a branch is a 41-byte file. Space comes back only after reflog expiry and git gc.",
+    "The uploads/tmp folder, at 31G, is the biggest clear target. Docker at 48G is the second, but it needs your go.",
+    "Access (SSH host, user, sudo), the uploads/tmp rules and safe age, which branches to keep, Docker go or no-go, a backup confirmation, and a target free-space level."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

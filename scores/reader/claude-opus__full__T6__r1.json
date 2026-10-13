@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Deleting branches frees almost no space; a branch is a tiny pointer file.",
+    "The biggest targets are uploads/tmp (31G) and Docker (48G), per the text.",
+    "Access to the box (SSH host and sudo user or pasted output), which process writes to uploads/tmp, whether 24 hours is the right cutoff, the meaning of \"old branch\", whether remote has the branches, Docker prune and revert-from-local-image answers, and a \"go\" for each delete step."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

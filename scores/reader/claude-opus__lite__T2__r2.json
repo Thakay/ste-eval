@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T2",
+  "rep": 2,
+  "answers": [
+    "Yes, no. Rebase gives each moved commit a new hash, because its parent commit changed.",
+    "Do not rebase a branch other people pulled or work on, shared branches like main, or when your team requires merge commits.",
+    "Run git rebase --abort to stop and return to the starting point."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "model": "codex-sol",
+  "arm": "lite",
+  "task": "T1",
+  "type": "procedure",
+  "rep": 1,
+  "seconds": 262.0,
+  "exit": 0,
+  "usage": {
+    "tool_calls": 0,
+    "input_tokens": 10992,
+    "cached_input_tokens": 8832,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 7594,
+    "reasoning_output_tokens": 6214
+  }
+}

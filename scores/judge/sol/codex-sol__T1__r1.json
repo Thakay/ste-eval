@@ -1,0 +1,111 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T1",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "base",
+    "C": "full",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Provides reliable backup and restore steps with useful recovery caveats, though the recommendation for a separate backup copy could state its destination more clearly."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Offers clear, practical steps with overlap prevention, restore validation, and an explicit recommendation to keep a copy off the server."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 9,
+        "note": "Provides the strongest automated restore test, including bounded readiness checks, error handling, cleanup, and use of the production image."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Gives sound backup and restore instructions with clear role requirements, but omits a recommendation to copy backups off the server or onto another disk."
+      }
+    },
+    "ranking": [
+      "C",
+      "B",
+      "A",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 16382,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 999,
+      "reasoning_output_tokens": 635
+    }
+  }
+}

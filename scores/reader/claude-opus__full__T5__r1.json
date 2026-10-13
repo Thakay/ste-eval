@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "The api container itself, not the database. Postgres runs in the separate db container.",
+    "db, the Compose service name, used as the host in DATABASE_URL.",
+    "No. The short depends_on form waits only for the container to start, not for Postgres to accept connections."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

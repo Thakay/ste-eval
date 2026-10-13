@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 3,
+  "answers": [
+    "NOT STATED",
+    "NOT STATED",
+    "Running Postgres on the VPS needs more memory, connection management, and service maintenance."
+  ],
+  "scores": [
+    0,
+    0,
+    1
+  ]
+}

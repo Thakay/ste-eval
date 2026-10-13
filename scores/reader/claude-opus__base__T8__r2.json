@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Measure first: add tracing to the endpoint to find which step takes the time.",
+    "Never cache the price. Read it live. If the price lookup is the slow part, cache only with invalidation on every price write, a short TTL backstop, and a cache-age alert.",
+    "No, it changed its earlier answer. It now says not to add the cache yet."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

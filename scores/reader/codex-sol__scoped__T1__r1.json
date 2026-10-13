@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T1",
+  "rep": 1,
+  "answers": [
+    "Hmm, the text does not name a backup tool by itself, but it says the script runs `docker exec app-db pg_dump` to create the dump file.",
+    "The `find ... -name 'app-*.dump' -mtime +6 -delete` command in the backup script removes them after each successful backup.",
+    "The text says to start a separate restore container, named app-db-restore-test, using the production image and a new volume, with no ports published. The restore test is not run on production."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

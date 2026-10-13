@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T3",
+  "rep": 2,
+  "answers": [
+    "No. Keep SQLite for now if it meets peak-load response times and has no frequent lock errors.",
+    "Writes frequently wait or fail, or necessary transactions hold the write lock too long; also before adding a second application server.",
+    "You must manage database updates, connections, memory, monitoring, and backups."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

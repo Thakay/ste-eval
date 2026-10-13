@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "full",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "Localhost points to the api container itself, not your machine.",
+    "Use the host name db, the Postgres service name.",
+    "No. A plain depends_on only waits for the db container to start. A healthcheck with condition service_healthy makes api wait until Postgres is ready."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

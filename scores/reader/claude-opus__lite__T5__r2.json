@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T5",
+  "rep": 2,
+  "answers": [
+    "Inside the api container, localhost points to the api container itself, not to Postgres.",
+    "DATABASE_URL should use the host name db, matching the Compose service name.",
+    "No. depends_on only waits for the db container to start, not for Postgres to accept connections."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

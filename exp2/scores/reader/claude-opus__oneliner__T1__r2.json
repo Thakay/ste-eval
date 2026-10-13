@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T1",
+  "rep": 2,
+  "answers": [
+    "The pg_dump command, run with docker exec inside the app-db container, writes the backup file.",
+    "A find command with -mtime +6 and -delete removes backup files that are 7 days old or more.",
+    "The restore test should run in a temporary container, such as app-db-restoretest, never in app-db."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

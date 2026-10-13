@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not much. Branch deletion frees close to 0 space, since branch files are tiny and commits stay in .git/objects until reflog expires and git gc runs.",
+    "/srv/app/uploads/tmp is the biggest target, up to 31G. Docker is the largest item at 48G, but its gain is unknown until docker system df is run.",
+    "SSH host, user, and sudo access (or pasted command output), rules for what writes to uploads/tmp, confirmation no file is the only copy, an age limit, Docker rollback needs, branches to keep, and an explicit go for Phase 2."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T6",
+  "rep": 3,
+  "answers": [
+    "Not by much. Branches are tiny files, so removing them frees almost no space; git objects only go away with git gc.",
+    "uploads/tmp (31 GB) and Docker (48 GB) are the biggest targets. Start with these two.",
+    "Access to the prod server or the command output, the uploads/tmp usage details, branch names to keep, Docker rollback needs, and a low-traffic time."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "No. The text says do not move to Postgres now; plan the move before adding the second app server.",
+    "A second app server makes the move necessary. Lock errors or slow writes that continue after tuning, needing Postgres-only features, or needing failover also trigger it.",
+    "Running Postgres takes more operations work: backups, upgrades, vacuum, and connection limits. It also uses 1 to 2 GB of RAM on an 8 GB VPS."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

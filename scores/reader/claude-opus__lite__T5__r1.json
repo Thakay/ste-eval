@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "lite",
+  "task": "T5",
+  "rep": 1,
+  "answers": [
+    "Localhost points to the api container itself, not the Postgres container, so nothing listens there on 5432.",
+    "Use the service name db as the host, for example postgres://app:secret@db:5432/app.",
+    "No. depends_on only waits for the db container to start, not for Postgres to accept connections, so a healthcheck is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

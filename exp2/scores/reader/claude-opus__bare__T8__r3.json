@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 3,
+  "answers": [
+    "Trace the slow requests first to find what dominates the 900 ms, before deciding whether caching is the right tool.",
+    "Split product data from price and stock. Cache slow, rarely changing data. Read price fresh, or cache it only with explicit invalidation plus a short TTL backstop.",
+    "No. The assistant changed its earlier answer and dropped its claim of a simple Redis cache with a 10-minute TTL."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "oneliner",
+  "task": "T5",
+  "rep": 3,
+  "answers": [
+    "localhost points to the API container itself, not your machine or the database.",
+    "DATABASE_URL should use the host name db, as in postgres://app:secret@db:5432/app.",
+    "No. depends_on only starts the db container first. It does not wait for Postgres to be ready; a health check is needed."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not directly. Branches are tiny pointer files, so deleting them frees close to nothing; the real gain comes from clearing uploads/tmp and possibly Docker.",
+    "/srv/app/uploads/tmp, which uses 31G. Docker (48G) is likely the bigger lever overall, though the text says ~109G is still unaccounted for.",
+    "Access (SSH host, user, sudo or pasted output); what writes to uploads/tmp and minimum file age to delete; which branches to keep; Docker go or no-go; timing during traffic."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

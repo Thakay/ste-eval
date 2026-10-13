@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not directly. Deleting branches frees almost no space; it only helps after expiring the reflog and running git gc, and only if .git is large.",
+    "Docker is the biggest safe target (48G), with uploads/tmp (up to 31G) next. About 109G is still unexplained.",
+    "Access to prod (SSH host and user with sudo, or pasted command output), answers about uploads/tmp, branches to keep, Docker rollback needs, and whether a backup exists."
+  ],
+  "scores": [
+    1,
+    1,
+    0
+  ]
+}

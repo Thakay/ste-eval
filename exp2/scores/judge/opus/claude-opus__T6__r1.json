@@ -1,0 +1,97 @@
+{
+  "judge": "opus",
+  "gen": "claude-opus",
+  "task": "T6",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "oneliner",
+    "B": "bare"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "invented": [],
+        "errors": [
+          "Says the reflog keeps deleted-branch commits for 90 days. That is too simple: a deleted branch's own reflog goes away with it, and unreachable entries expire after 30 days by default."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 2,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Safe and complete plan with a clear 'cannot recover' warning and a good list of questions, but the wording is stilted (\"I did not do any commands\", \"the quantity of docker space\"), and it does not mention logs or journal as other space users."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 4,
+        "overall": 8,
+        "note": "Strongest practical plan: dry-run sizing, a symlink and mount check, a branch SHA backup for restore, container-log and deleted-open-file checks, and a correct 94% to about 78% estimate. It never says plainly that the uploads/tmp deletes are permanent, and its denser idiom is slightly harder for ESL readers."
+      }
+    },
+    "ranking": [
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7457,
+      "cache_read_input_tokens": 544,
+      "output_tokens": 1560,
+      "output_tokens_details": {
+        "thinking_tokens": 1087
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7457,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1560,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 7457,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7457
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cost_usd": 0.09097279999999999
+  }
+}

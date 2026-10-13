@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T2",
+  "rep": 1,
+  "answers": [
+    "Yes, the commit hashes change after a rebase. Git recreates the commits with new IDs because their history has changed.",
+    "Avoid rebase when other developers depend on your branch's commits, when you must preserve existing history or merge commits, or when your team requires merges.",
+    "Run `git rebase --abort` to cancel the rebase."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

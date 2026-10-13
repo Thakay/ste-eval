@@ -1,0 +1,115 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T4",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "full",
+    "C": "base",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Accurate and actionable, but the merge blocker appears late and the reason for rejecting freezegun is only implied."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Leads with the merge blocker and preserves uncertainty clearly, but does not explicitly state that freezegun was rejected."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Provides the clearest structure and strongest verification steps, but leaves rejection of freezegun implicit."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Preserves the evidence and caveats accurately, but repeats the blocker and cron status and does not explicitly reject freezegun."
+      }
+    },
+    "ranking": [
+      "C",
+      "B",
+      "A",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12922,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1038,
+      "reasoning_output_tokens": 513
+    }
+  }
+}

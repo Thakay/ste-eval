@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T8",
+  "rep": 2,
+  "answers": [
+    "Profile first: trace slow requests to find the real cause, such as an N+1 pattern or missing index.",
+    "Don't cache prices. If prices must be cached, invalidate on every price write, keep a short TTL, and make checkout read the authoritative price.",
+    "No. The assistant changed its earlier answer and withdrew the cache recommendation."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

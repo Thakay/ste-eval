@@ -1,0 +1,107 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T2",
+  "rep": 1,
+  "label_to_arm": {
+    "A": "scoped",
+    "B": "lite",
+    "C": "base",
+    "D": "full"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 7,
+        "note": "Clearly explains the rewritten history and shared-branch risks, but omits how to continue after conflicts and how to push a rebased branch."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Gives clear conflict recovery steps and explains when to merge, but omits the force push requirement and --force-with-lease."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Provides a clear sequence, warns that conflicts can recur, and explains shared-history risks, but omits pushing after rebase."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Combines clear operational steps with useful caveats about skipped commits and unchanged branches, but omits --force-with-lease for pushing rewritten history."
+      }
+    },
+    "ranking": [
+      "D",
+      "C",
+      "B",
+      "A"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12579,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 731,
+      "reasoning_output_tokens": 370
+    }
+  }
+}

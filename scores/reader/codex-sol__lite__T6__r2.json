@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "lite",
+  "task": "T6",
+  "rep": 2,
+  "answers": [
+    "Not much. Git branches only reference Git objects, so deleting them usually frees little space.",
+    "The temporary directory is the main target.",
+    "Production hostname and approved access method, the temporary-file retention rule with confirmation expired files are disposable, how uploads and background jobs use that directory, your definition of old branches, the merge target, branches needed for deployment or rollback, and whether a brief upload pause is allowed."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "full",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not really. The text says deleting Git branches usually frees very little space, because branches reference shared Git objects.",
+    "The temporary uploads directory is the largest likely saving, though the text does not name its path.",
+    "An approved connection to the correct production server, the temporary upload rules, permission for a brief upload pause if needed, and your definition of old branches, merge target, and protected branches."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

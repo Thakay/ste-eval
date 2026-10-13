@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"redacted"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Inside the API container, `localhost` refers to that container. PostgreSQL runs in the `db` container. Use `db:5432` to reach PostgreSQL through the Compose network.\n\nThere is also a startup timing risk. Your current `depends_on` sets the start order, but does not wait until PostgreSQL accepts connections. Add a health check:\n\n```yaml\nservices:\n  api:\n    build: .\n    environment:\n      DATABASE_URL: postgres://app:secret@db:5432/app\n    depends_on:\n      db:\n        condition: service_healthy\n\n  db:\n    image: postgres:17\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n      POSTGRES_DB: app\n    healthcheck:\n      test: [\"CMD\", \"pg_isready\", \"-h\", \"127.0.0.1\", \"-U\", \"app\", \"-d\", \"app\"]\n      interval: 5s\n      timeout: 3s\n      retries: 10\n```\n\nThe health check uses `127.0.0.1` because it runs inside the database container.\n\nApply the changes with `docker compose up --build`.\n\nGodspeed, Spartan."}}
+{"type":"turn.completed","usage":{"input_tokens":14507,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1237,"reasoning_output_tokens":981}}
+
+--- STDERR ---
+Reading additional input from stdin...

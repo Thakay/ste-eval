@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "oneliner",
+  "task": "T4",
+  "rep": 3,
+  "answers": [
+    "No. The fix branch fix/invoice-tz is not pushed. It exists only on the previous engineer's local computer.",
+    "Priya must answer whether due dates are in customer local time or in UTC. Nothing merges until she answers.",
+    "test_late_fee and test_reminder_email fail with the fix."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "bare",
+  "task": "T3",
+  "rep": 1,
+  "answers": [
+    "NOT STATED",
+    "The second app server going in, since SQLite can't safely share one file across multiple hosts.",
+    "Ops burden: a Postgres service to tune, back up, upgrade, and monitor, instead of one file."
+  ],
+  "scores": [
+    0,
+    1,
+    1
+  ]
+}

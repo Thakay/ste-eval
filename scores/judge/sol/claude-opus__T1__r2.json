@@ -1,0 +1,124 @@
+{
+  "judge": "sol",
+  "gen": "claude-opus",
+  "task": "T1",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "full",
+    "B": "lite",
+    "C": "base",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The restore-test script exits successfully even when row counts differ, so scheduled checks can report success after a failed comparison.",
+          "Failures inside the diff process substitutions do not reliably fail the restore test.",
+          "Cleanup omits -v, leaving the temporary container's anonymous data volume behind.",
+          "The manual ls command needs sudo because the backup directory is accessible only to root."
+        ],
+        "clarity": 4,
+        "actionability": 3,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "The backup setup is thorough, but the automated restore test does not reliably signal validation failures."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "The suggested pg_dumpall command needs container execution or explicit connection settings and output redirection to produce a saved roles backup."
+        ],
+        "clarity": 5,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "The systemd setup provides clear scheduling and failure visibility, though the restore procedure relies on careful manual error checking."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [
+          "Keeping seven files does not enforce seven-day retention: failed nights preserve older backups, and extra runs can remove backups less than seven days old."
+        ],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 4,
+        "overall": 7,
+        "note": "The automated restore check is useful, but file-count retention changes the user's requested seven-day policy."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [
+          "The database and backups share one disk; the task establishes the same server but does not specify disk placement."
+        ],
+        "errors": [
+          "Disk-space guidance accounts for seven dumps but omits the additional dump written before old backups are deleted."
+        ],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "The instructions are easy to follow and include strict restore error handling, but repeated warnings make the prose feel mechanical."
+      }
+    },
+    "ranking": [
+      "B",
+      "D",
+      "A",
+      "C"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 17565,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2014,
+      "reasoning_output_tokens": 1510
+    }
+  }
+}

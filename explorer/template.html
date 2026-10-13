@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STE Agent Eval</title>
+<meta name="description" content="Full results and all 224 replies from a test of Simplified Technical English (ASD-STE100) rules on Claude Code and Codex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: one 38rem reading column, like a thakay.dev post. The sentence ruler, the reply viewer and the charts break out to a 74rem stage. */
+:root {
+  --paper: #ffffff; --ink: #141414; --body: #2c2c2a; --muted: #6b6b67; --hair: #e7e6e1;
+  --wash: #f7f6f2; --wash-2: #efeee8; --accent: #ee8a3c; --accent-ink: #a14f0a;
+  --base: #77756e; --lite: #2a78d6; --scoped: #eb6834; --full: #1baf7a; --bare: #77756e; --oneliner: #4a3aa7;
+  --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --measure: 38rem; --wide: 74rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b0b0b; --ink: #f2f2ee; --body: #d8d8d3; --muted: #8f8f89; --hair: #272725;
+    --wash: #131312; --wash-2: #1c1c1a; --accent: #f0953f; --accent-ink: #f5a95f;
+    --base: #9a988f; --lite: #3987e5; --scoped: #d95926; --full: #199e70; --bare: #9a988f; --oneliner: #9085e9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0b0b0b; --ink: #f2f2ee; --body: #d8d8d3; --muted: #8f8f89; --hair: #272725;
+  --wash: #131312; --wash-2: #1c1c1a; --accent: #f0953f; --accent-ink: #f5a95f;
+  --base: #9a988f; --lite: #3987e5; --scoped: #d95926; --full: #199e70; --bare: #9a988f; --oneliner: #9085e9; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--body); font: 400 1.0625rem/1.68 var(--sans); padding-inline: 16px; padding-block: 0 4rem; -webkit-font-smoothing: antialiased; }
+.col { max-width: var(--measure); margin-inline: auto; }
+.stage { max-width: var(--wide); margin-inline: auto; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 2px; }
+code { font: 500 0.86em var(--mono); background: var(--wash-2); padding: 0.08em 0.32em; border-radius: 3px; color: var(--ink); }
+h1, h2, h3 { color: var(--ink); text-wrap: balance; font-family: var(--sans); }
+h2 { font-size: clamp(1.55rem, 3.2vw, 2rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin: 4.5rem 0 1rem; }
+h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin: 2.75rem 0 0.6rem; }
+p { margin: 0 0 1.05rem; }
+.eyebrow { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); }
+.num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+/* Hero */
+.hero { padding-block: 3.5rem 1.5rem; }
+.draft { display: inline-flex; gap: 0.5rem; align-items: center; font: 600 0.7rem var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink); border: 1.5px solid var(--accent); padding: 0.25rem 0.55rem; border-radius: 2px; }
+h1 { font-size: clamp(2.3rem, 6.4vw, 4.4rem); font-weight: 800; letter-spacing: -0.045em; line-height: 0.98; margin: 1.1rem 0 1.2rem; max-width: 16ch; }
+h1 .strike { color: var(--muted); }
+.dek { font-size: 1.22rem; line-height: 1.5; color: var(--body); max-width: 34rem; margin: 0 0 1.4rem; }
+.byline { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font: 400 0.78rem var(--mono); color: var(--muted); }
+
+/* Ruler chart */
+.ruler { margin-block: 2.2rem 0.5rem; }
+.ruler-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem 2rem; align-items: end; margin-bottom: 0.4rem; }
+.ruler-head .cap { max-width: 36rem; font-size: 0.92rem; color: var(--muted); line-height: 1.5; margin: 0; }
+.tally { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.tally div { font: 400 0.75rem/1.35 var(--mono); color: var(--muted); }
+.tally b { display: block; font: 800 1.7rem/1.1 var(--sans); color: var(--ink); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.chart { width: 100%; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--mono); }
+
+/* Prose bits */
+.lede::first-letter { font-weight: 800; color: var(--ink); }
+.aside { border-left: 2px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem; color: var(--muted); font-size: 0.97rem; }
+.note { font: 400 0.8rem/1.5 var(--mono); color: var(--muted); }
+.callout { background: var(--wash); border-radius: 4px; padding: 1rem 1.15rem; font-size: 0.97rem; }
+.callout strong { color: var(--ink); }
+
+/* Rig */
+.arms { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); margin: 1.4rem 0 1.6rem; }
+.arm { background: var(--paper); padding: 0.9rem 1rem 1rem; display: grid; gap: 0.3rem; align-content: start; }
+.arm .k { display: flex; align-items: center; gap: 0.5rem; font: 600 0.82rem var(--mono); color: var(--ink); }
+.sw { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; flex: none; }
+.sw.base { background: var(--base); } .sw.lite { background: var(--lite); } .sw.scoped { background: var(--scoped); } .sw.full { background: var(--full); } .sw.bare { background: var(--bare); } .sw.oneliner { background: var(--oneliner); }
+.arm .size { font: 800 1.35rem var(--sans); color: var(--ink); letter-spacing: -0.02em; }
+.arm p { margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
+.tasks { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.15rem 1.6rem; }
+.tasks li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.5rem; padding: 0.45rem 0; border-top: 1px solid var(--hair); font-size: 0.92rem; line-height: 1.4; }
+.tasks .id { font: 600 0.8rem/1.6 var(--mono); color: var(--accent-ink); }
+.tasks b { color: var(--ink); font-weight: 600; }
+
+/* Viewer */
+.viewer { margin-top: 1.8rem; border-top: 2px solid var(--ink); padding-top: 1.1rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; align-items: end; }
+.ctl { display: grid; gap: 0.3rem; }
+.seg { display: inline-flex; border: 1px solid var(--hair); border-radius: 4px; padding: 2px; background: var(--wash); flex-wrap: wrap; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { font: 500 0.8rem var(--mono); padding: 0.38rem 0.7rem; border-radius: 3px; cursor: pointer; color: var(--muted); display: inline-flex; gap: 0.4rem; align-items: center; white-space: nowrap; }
+.seg input:checked + label { background: var(--paper); color: var(--ink); box-shadow: 0 0 0 1px var(--hair); }
+.seg input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 1px; }
+.rail { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; margin: 1.1rem 0 0.2rem; }
+.rail button { all: unset; cursor: pointer; display: grid; gap: 0.1rem; padding: 0.5rem 0.55rem 0.45rem; border-top: 3px solid var(--hair); min-width: 0; }
+.rail button:hover { border-top-color: var(--muted); }
+.rail button[aria-current="true"] { border-top-color: var(--accent); }
+.rail .t { font: 600 0.78rem var(--mono); color: var(--ink); }
+.rail .ty { font: 400 0.72rem var(--mono); color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rail .d { font: 500 0.7rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.rail button:focus-visible { outline: 2px solid var(--accent); }
+.slidehead { display: flex; justify-content: space-between; gap: 1rem; align-items: start; margin: 1.3rem 0 0.8rem; flex-wrap: wrap; }
+.slidehead h3 { margin: 0.2rem 0 0.2rem; font-size: 1.45rem; letter-spacing: -0.02em; }
+.slidehead .why { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.nav { display: flex; gap: 0.4rem; align-items: center; }
+.nav button { font: 600 0.8rem var(--mono); background: var(--paper); color: var(--ink); border: 1px solid var(--hair); border-radius: 4px; padding: 0.45rem 0.75rem; cursor: pointer; }
+.nav button:hover { border-color: var(--muted); }
+.nav .count { font: 500 0.78rem var(--mono); color: var(--muted); padding-inline: 0.4rem; font-variant-numeric: tabular-nums; }
+.prompt { background: var(--wash); border-radius: 4px; padding: 0.85rem 1rem; font: 400 0.82rem/1.55 var(--mono); color: var(--body); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 7.2rem; overflow: hidden; position: relative; }
+.prompt.open { max-height: none; }
+.prompt-toggle { all: unset; cursor: pointer; font: 600 0.75rem var(--mono); color: var(--accent-ink); margin: 0.35rem 0 0; display: inline-block; }
+.rankings { display: grid; gap: 0.35rem; margin: 1rem 0 0.9rem; }
+.rankrow { display: flex; flex-wrap: wrap; gap: 0.35rem 0.5rem; align-items: center; font: 400 0.76rem var(--mono); color: var(--muted); }
+.rankrow .who { width: 6.5rem; flex: none; }
+.chip { display: inline-flex; align-items: center; gap: 0.35rem; border: 1px solid var(--hair); border-radius: 3px; padding: 0.15rem 0.45rem; color: var(--ink); font: 500 0.74rem var(--mono); font-variant-numeric: tabular-nums; }
+.chip .pos { color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+.seg.flip { display: none; margin: 0 0 0.7rem; }
+.card { border: 1px solid var(--hair); border-radius: 6px; background: var(--paper); display: grid; grid-template-rows: auto auto 1fr auto; min-width: 0; }
+.card.ste { box-shadow: inset 0 3px 0 var(--armc, var(--lite)); }
+.card.basec { box-shadow: inset 0 3px 0 var(--base); }
+.card header { padding: 0.85rem 1rem 0.6rem; display: flex; justify-content: space-between; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; }
+.card header .lab { font: 600 0.8rem var(--mono); color: var(--ink); display: flex; gap: 0.45rem; align-items: center; }
+.card header .sub { font: 400 0.72rem var(--mono); color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.stat { padding: 0.5rem 0.6rem; border-right: 1px solid var(--hair); min-width: 0; }
+.stat:nth-child(4n) { border-right: 0; }
+.stat:nth-child(n+5) { border-top: 1px solid var(--hair); }
+.stat .l { font: 400 0.64rem/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.stat .v { font: 600 0.95rem/1.3 var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat .v small { font-weight: 400; color: var(--muted); font-size: 0.72rem; }
+.stat .v.win { text-decoration: underline 2px var(--accent); text-underline-offset: 4px; }
+.reply { padding: 0.9rem 1.1rem; max-height: 34rem; overflow: auto; font-size: 0.9rem; line-height: 1.6; color: var(--body); min-width: 0; }
+.reply h1, .reply h2, .reply h3, .reply h4 { font-size: 1rem; margin: 1.1rem 0 0.4rem; letter-spacing: 0; font-weight: 700; }
+.reply p { margin: 0 0 0.7rem; }
+.reply ul, .reply ol { padding-left: 1.25rem; margin: 0 0 0.7rem; }
+.reply li { margin: 0.15rem 0; }
+.reply pre { background: var(--wash-2); padding: 0.7rem 0.8rem; border-radius: 4px; overflow-x: auto; font: 400 0.76rem/1.5 var(--mono); }
+.reply pre code { background: none; padding: 0; font-size: inherit; }
+.reply .tw { overflow-x: auto; margin: 0 0 0.8rem; }
+.reply table { border-collapse: collapse; font-size: 0.8rem; min-width: 100%; }
+.reply th, .reply td { border-bottom: 1px solid var(--hair); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+.reply strong { color: var(--ink); }
+.notes { border-top: 1px solid var(--hair); padding: 0.75rem 1rem 0.9rem; display: grid; gap: 0.55rem; font-size: 0.84rem; line-height: 1.5; }
+.notes .j { font: 600 0.68rem var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); display: block; margin-bottom: 0.1rem; }
+.notes details { font-size: 0.8rem; color: var(--muted); }
+.notes summary { cursor: pointer; font: 500 0.74rem var(--mono); }
+.checks { margin-top: 1.2rem; }
+.checks summary { cursor: pointer; font: 600 0.8rem var(--mono); color: var(--ink); padding: 0.4rem 0; }
+.cgrid-wrap { overflow-x: auto; }
+.cgrid { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+.cgrid th { font: 500 0.7rem var(--mono); color: var(--muted); text-align: center; padding: 0.35rem 0.4rem; white-space: nowrap; }
+.cgrid th:first-child { text-align: left; }
+.cgrid td { border-top: 1px solid var(--hair); padding: 0.4rem 0.4rem; vertical-align: top; }
+.cgrid td.g { text-align: center; font-size: 1rem; line-height: 1; color: var(--ink); width: 4.2rem; }
+.legend-inline { font: 400 0.74rem var(--mono); color: var(--muted); margin: 0.4rem 0 0; }
+
+/* Results */
+.fig { margin: 1.6rem 0 2rem; }
+.fig figcaption { font: 400 0.78rem/1.5 var(--mono); color: var(--muted); margin-top: 0.5rem; max-width: 46rem; }
+.fig .ft { font: 600 0.82rem var(--mono); color: var(--ink); margin-bottom: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; font: 400 0.76rem var(--mono); color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.tablewrap { overflow-x: auto; margin: 1.2rem 0 1.6rem; }
+table.data { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+table.data th { font: 500 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); text-align: right; padding: 0.45rem 0.6rem; border-bottom: 1.5px solid var(--ink); white-space: nowrap; }
+table.data th:first-child, table.data td:first-child { text-align: left; }
+table.data td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--hair); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.data td:first-child { white-space: normal; }
+table.data tr.pick td { background: var(--wash); }
+table.data tr.pick td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+table.data .w { font-weight: 700; color: var(--ink); }
+.limits { background: var(--wash); border-radius: 6px; padding: 1.2rem 1.3rem 0.4rem; margin-top: 1rem; }
+.limits h2 { margin-top: 0; font-size: 1.3rem; }
+.receipts pre { background: var(--wash-2); border-radius: 4px; padding: 0.9rem 1rem; overflow-x: auto; font: 400 0.76rem/1.55 var(--mono); color: var(--body); }
+.files { list-style: none; padding: 0; margin: 0 0 1.2rem; font: 400 0.82rem/1.9 var(--mono); }
+.files b { color: var(--ink); font-weight: 600; }
+footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--hair); font: 400 0.76rem/1.6 var(--mono); color: var(--muted); }
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--ink); color: var(--paper); font: 500 0.74rem/1.45 var(--mono); padding: 0.45rem 0.6rem; border-radius: 4px; max-width: 18rem; opacity: 0; transition: opacity 0.12s; }
+.tip.on { opacity: 1; }
+@media (max-width: 760px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  /* stacked cards: show one reply at a time, switched by the flip toggle */
+  .seg.flip { display: inline-flex; }
+  .cards[data-side="base"] .card.ste, .cards[data-side="ste"] .card.basec { display: none; }
+  .rail { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(4n) { border-right: 1px solid var(--hair); }
+  .stat:nth-child(2n) { border-right: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--hair); }
+  .reply { max-height: 26rem; }
+  .rankrow .who { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+/* Embed mode (?embed=1 or ?embed=2): only that round's reply viewer, for the iframe in the post */
+html[data-embed] header.hero, html[data-embed] main > *, html[data-embed] footer { display: none; }
+html[data-embed="1"] main > #replies, html[data-embed="2"] main > #replies-2 { display: block; }
+html[data-embed] .viewer { margin-top: 0; border-top: 0; padding-top: 0.4rem; }
+html[data-embed] .viewer > .col { display: none; }
+</style>
+<script>
+  (function () {
+    var e = new URLSearchParams(location.search).get('embed');
+    if (e === '1' || e === '2') document.documentElement.dataset.embed = e;
+  })();
+</script>
+</head>
+<body>
+
+<div class="tip" id="tip" role="tooltip"></div>
+
+<header class="hero">
+  <div class="col">
+    <span class="draft">Full results</span>
+    <h1>Every reply, every number</h1>
+    <p class="dek">Simplified Technical English exists so a mechanic can't misread a maintenance step. I put it into Claude Code and Codex over two rounds, then had two blind judges score 224 replies. This is the long version.</p>
+    <div class="byline"><span>Kay</span><a href="https://blog.thakay.dev/asd-ste100-and-llms/">Read the post</a><a href="https://github.com/Thakay/ste-eval">Code and data</a></div>
+  </div>
+  <div class="stage ruler">
+    <div class="ruler-head">
+      <p class="cap">Every sentence from the 128 replies, by length in words. Above the line is my current setup. Below it are the three STE rule sets combined. The dashed rules are STE's limits: 20 words for an instruction, 25 for a description.</p>
+      <div class="tally" id="tally"></div>
+    </div>
+    <div class="chart" id="hero-chart" aria-label="Sentence length distribution, baseline versus STE"></div>
+  </div>
+</header>
+
+<main>
+<section class="col" id="story">
+  <p class="lede">This page holds the full results behind <a href="https://blog.thakay.dev/asd-ste100-and-llms/">the post</a>. The post tells the story and makes the call. Here you can check it: the setup, every chart, and all 224 replies. The code and raw data are <a href="https://github.com/Thakay/ste-eval">on GitHub</a>.</p>
+  <p>ASD-STE100 is the controlled English that aerospace maintenance manuals are written in. STE is strict on purpose. A sentence that tells you to do something gets 20 words at most, and a description gets 25. You write one instruction per sentence, in the active voice, with simple tenses and no stack of more than three nouns. Behind the rules sits a dictionary of about 900 approved words, each with one meaning. The studies behind it are about technicians with real wrenches in their hands: fewer misreadings, with the biggest gains on complex documents and for people who read English as a second language.</p>
+
+  <h3>What I could use, and what I couldn't</h3>
+  <p>The current standard is Issue 9: 53 rules in nine sections. The PDF is free to download. You still can't paste it into a prompt, because the license forbids reproducing any part of it and the name is a trademark. Every rule set in this test is a paraphrase.</p>
+  <p>I also checked skills.sh. A sweep turned up 23 skills that touch STE or plain language. A few of them ship the copyrighted dictionary. None fits everyday chat as it is, so the most faithful one, an MIT-licensed rewrite skill, became my heaviest test arm.</p>
+  <p class="aside">The research sweep found no peer-reviewed study of LLMs writing STE. The best LLM data was a community benchmark whose author found that an 8-line prompt beat a full STE skill on everything a reader sees. STE's own maintainers say it isn't meant for general writing. Fair warning, then.</p>
+</section>
+
+<section class="col" id="rig">
+  <h2>The rig</h2>
+  <p>Four rule sets, two models, eight tasks and two runs of each make 128 replies. The tasks are invented scenarios: names, places, companies and incidents in them are fictional.</p>
+</section>
+<div class="stage">
+  <div class="arms">
+    <div class="arm"><span class="k"><i class="sw base"></i>Baseline</span><span class="size">0 words</span><p>My current setup: the global <code>CLAUDE.md</code>, Codex's <code>AGENTS.md</code>, and my output style. No STE.</p></div>
+    <div class="arm"><span class="k"><i class="sw lite"></i>Lite</span><span class="size" data-armwords="lite"></span><p>Compact STE rules, always on: sentence limits, active voice, one term per thing, warnings command-first, keep needed caveats.</p></div>
+    <div class="arm"><span class="k"><i class="sw scoped"></i>Scoped</span><span class="size" data-armwords="scoped"></span><p>Strict rules for procedures, warnings, handoffs and docs. Relaxed for discussion: a longer sentence is fine when it keeps a reason or a caveat.</p></div>
+    <div class="arm"><span class="k"><i class="sw full"></i>Full</span><span class="size" data-armwords="full"></span><p>The most faithful skill from skills.sh (danyuchn/asd-ste100, MIT), forced on for every reply.</p></div>
+  </div>
+</div>
+<section class="col">
+  <p>Each rule set went in as a project <code>CLAUDE.md</code> or <code>AGENTS.md</code> inside an empty folder, which is how it would load if I adopted it for real. The baseline is my actual setup, so every arm also carries my plain-language line and my output style. The models were Claude Opus 5.5 and Codex's gpt-6.1-sol, both at xhigh effort, one turn each, no tools.</p>
+  <p>That last part took a fix. In the smoke run, Codex answered a Docker question by poking around the empty folder and searching Docker's docs. Reasonable, but Claude had no web access in this test. So I turned off Codex's web search and apps, and added one line to every prompt for both models: answer from what you know. After that, all 64 Codex runs made zero tool calls.</p>
+  <ol class="tasks" id="tasklist"></ol>
+  <p>Two judges, one from each family, read every group of four replies blind and in shuffled order, so Opus and sol each scored all 128. They checked each reply against a hidden list of facts for its task and rated it on clarity, actionability, nuance, naturalness and second-language ease. Then each judge ranked the four. On top of that, a small model (Haiku) took a three-question reading quiz on each reply using only the reply, and a spaCy script measured the STE rules directly: sentence length, passive voice, noun stacks and tenses.</p>
+  <p>I scored for a mix of readers: me, other agents reading handoffs, and teammates who read English as a second language. Where the two judges disagree, I say so, and I only lean on results both of them back.</p>
+</section>
+
+<section class="stage viewer" id="replies" aria-labelledby="replies-h">
+  <div class="col" style="max-width: var(--measure); margin-inline: auto;">
+    <span class="eyebrow">The replies</span>
+    <h2 id="replies-h" style="margin-top: 0.4rem;">Read them yourself</h2>
+    <p>Numbers come later. Here's every reply, baseline on the left and STE on the right. Pick a model and a rule set, then step through the tasks with the arrows or your keyboard. The scores on each card are the judges' blind scores for that exact reply.</p>
+  </div>
+  <div id="viewer1"></div>
+</section>
+
+<section class="col" id="results">
+  <span class="eyebrow">Results</span>
+  <h2 style="margin-top: 0.4rem;">My one-line rule was already most of the way there</h2>
+  <p>Baseline replies averaged about 10 words per sentence, and only 1.5% of their sentences ran past 25 words. STE still tightened things. Long sentences mostly disappeared and passive voice fell from 6% of sentences to 1 or 2%. Perfect and progressive tenses nearly vanished too. It just didn't have far to go.</p>
+</section>
+<div class="col tablewrap"><table class="data" id="ste-table"></table></div>
+
+<section class="col">
+  <h3>Codex got worse. Claude depends on who you ask.</h3>
+</section>
+<figure class="stage fig">
+  <div class="ft">Change in overall score vs baseline, 1 to 10 scale <span class="legend" id="leg1"></span></div>
+  <div class="chart" id="chart-models"></div>
+  <figcaption>Dot is the mean paired difference (same task, same run, same judge). Line is the 95% bootstrap interval. Both judges pooled; 32 paired scores per dot.</figcaption>
+</figure>
+<section class="col">
+  <p>Both judges agree on Codex. Every STE variant scored lower than the baseline, by half a point to three quarters of a point out of ten. Claude is murkier. The Opus judge slightly preferred Claude's baseline, while the sol judge preferred Claude's STE replies by 0.6 to 0.8. Pool them and Claude's gain is small and inside the noise.</p>
+  <p>The pushback task shows the Codex drop best. In that one, I tell the assistant its earlier caching advice once cost us refunds and ask it to argue the other side. Codex's baseline answer averaged 9.0. With the Lite rules it averaged 7.2, and the Opus judge's note on one of them says the unknowns were "packed into one dense sentence." Codex's replies were already about half the length of Claude's. My read is that squeezing a terse writer through rules that reward short sentences costs it the "because" and "unless" that carry a tradeoff.</p>
+</section>
+<div class="col tablewrap"><table class="data" id="judge-table"></table></div>
+
+<section class="col">
+  <h3>What STE buys, and what it costs in tone</h3>
+</section>
+<figure class="stage fig">
+  <div class="ft">Change vs baseline, 1 to 5 scale <span class="legend" id="leg2"></span></div>
+  <div class="chart" id="chart-dims"></div>
+  <figcaption>Both models and both judges pooled; 64 paired scores per dot. Lines are 95% bootstrap intervals.</figcaption>
+</figure>
+<section class="col">
+  <p>The one result that holds under both judges and both models is second-language ease, up 0.4 to 0.6 on a 1-to-5 scale. Clarity moved a little, and only Full's gain clears the noise. Naturalness went down for every variant, and Lite and Full lost some nuance. Scoped relaxes the rules for discussion, and it held its nuance overall. On the tradeoff and pushback tasks it kept Codex's nuance score at the baseline's 5.0. That's a hint from a small sample, but it's the design doing what it was meant to.</p>
+  <p>Facts mostly survived. Checklist coverage dropped by 1 to 3 points, and only Full's drop clears the noise. The judges flagged fewer invented facts in Lite (7) and Full (5) than in the baseline (13), but Scoped had 17, so I wouldn't read much into that.</p>
+  <p class="aside">The judges also caught one of my own rules. The Opus judge called out the warrior send-off from my output style in <span id="sendoff">several</span> of its notes, as off-tone for second-language readers. Every arm carried it, so it doesn't skew the comparison. It's still a fair hit on my setup.</p>
+</section>
+
+<section class="col">
+  <h3>The tax</h3>
+</section>
+<figure class="stage fig">
+  <div class="ft">Change vs baseline, percent <span class="legend" id="leg3"></span></div>
+  <div class="chart" id="chart-tax"></div>
+  <figcaption>Means per reply. Prose words exclude code blocks and tables. Thinking tokens come from each CLI's usage report.</figcaption>
+</figure>
+<section class="col">
+  <p>This is the part I didn't see coming. Prose shrank by 4 to 18%, while thinking grew a lot more. Opus spent 51 to 66% more thinking tokens per reply. sol spent 65 to 83% more. Replies took 36 to 46% longer, and on Opus each reply cost 49 to 82% more. My guess is that the models draft, then check the draft against the rules, on every turn. Whatever the reason, you pay it on every reply, including the ones nobody else will read.</p>
+</section>
+
+<section class="col" id="round-two">
+  <span class="eyebrow">Round two</span>
+  <h2 style="margin-top: 0.4rem;">Four words instead of 2,600</h2>
+  <p>The first round left me with a simpler question. Do the models already know STE if you just name it? A rule file I can't legally copy is awkward to ship. A four-word line isn't.</p>
+  <p>So round two strips everything out. No global <code>CLAUDE.md</code> or <code>AGENTS.md</code>, no output style, no hooks, no Codex memories. One arm runs each CLI bare. The other gets a single line in the run folder's <code>CLAUDE.md</code> or <code>AGENTS.md</code>: <code>Speak only in ASD-STE100</code>. Same eight tasks, same two models at xhigh, and three runs per cell this time, so 96 replies went past the same two blind judges.</p>
+  <p class="aside">Getting a truly bare run took a detour. Claude Code's <code>--bare</code> flag only accepts an API key, so I used <code>--setting-sources project,local</code> instead, which drops my user settings and global <code>CLAUDE.md</code> but still loads the run folder's file. For Codex, each run pointed <code>CODEX_HOME</code> at a throwaway folder holding nothing but a link to my login. My send-off rule makes a good canary: it showed up in zero of the 96 replies.</p>
+</section>
+<div class="stage ruler">
+  <div class="ruler-head">
+    <p class="cap">Every sentence from round two, by length in words. Above the line, the bare CLIs. Below it, the same CLIs with one line naming the standard.</p>
+    <div class="tally" id="e2-tally"></div>
+  </div>
+  <div class="chart" id="e2-ruler" aria-label="Sentence length distribution, bare versus one line"></div>
+</div>
+<section class="col">
+  <p>The models know STE. From the name alone, sentences over 20 words fell from 8 or 9% of sentences to under 1%, and passive voice fell by more than half. The -ing forms and semicolons all but vanished, and the reading grade level dropped by two to three and a half grades. That puts it in the same range as my rule files: stricter than Lite on long sentences for Claude, and looser than Lite on passive voice for both models.</p>
+  <p>It also went further than I wanted.</p>
+</section>
+<figure class="stage fig">
+  <div class="ft">Change vs bare, one line minus bare <span class="legend"><span><i class="sw oneliner"></i>One line</span></span></div>
+  <div class="chart" id="chart-e2"></div>
+  <figcaption>Overall is on a 1 to 10 scale, the rest on 1 to 5. Paired by task, run and judge; 48 paired scores per dot. Lines are 95% bootstrap intervals.</figcaption>
+</figure>
+<section class="col">
+  <p>Second-language ease jumped a full point on the 1-to-5 scale, the biggest gain in either round. Naturalness fell by 1.2, and by 1.6 for Claude. Nuance dropped by 0.8. Across both models, the judges picked bare over the one-liner 76% of the time.</p>
+  <p>Codex took the hit again. It lost 0.85 points overall, both judges agree, and bare won 90% of its pairs. It also dropped 7 points of checklist facts. Claude's overall change was small and split by judge, the same pattern as round one, and it covered slightly more checklist facts with the line than without.</p>
+  <p>The tax went up too. Claude's thinking tripled, from about 1,700 to 5,200 tokens per reply, and each reply took twice as long. Codex thought 87% more and took 48% longer. Claude's prose didn't even get shorter.</p>
+  <h3>Where the one line lands</h3>
+  <p>The table puts both rounds side by side on the metrics that carry across: same tasks, same models, same script. Judge scores don't carry across, because each judge only compared replies within one round.</p>
+</section>
+<div class="col tablewrap"><table class="data" id="ladder-table"></table></div>
+<section class="col">
+  <p>For Claude, the one line is the strictest setup on sentence length and the most expensive in thinking. One side note surprised me. Claude with my own global rules and output style thinks about 1,200 more tokens per reply than bare Claude, and takes about ten seconds longer. Codex barely notices my setup. That comparison crosses rounds, so treat it as a hint.</p>
+  <p>What round two changes is the cost of option E. An on-demand STE rewrite doesn't need a 2,600-word skill, or any rule text I'd have to paraphrase around a license. One line that names the standard gets the style. I haven't tested that line in rewrite mode yet, on a finished document, where dropped facts are the thing to watch.</p>
+</section>
+<section class="stage viewer" id="replies-2" aria-labelledby="replies2-h">
+  <div class="col" style="max-width: var(--measure); margin-inline: auto;">
+    <span class="eyebrow">Round two replies</span>
+    <h2 id="replies2-h" style="margin-top: 0.4rem;">Bare vs one line</h2>
+    <p>Same viewer, three runs per task. The left card is the bare CLI; the right card got only <code>Speak only in ASD-STE100</code>.</p>
+  </div>
+  <div id="viewer2"></div>
+</section>
+
+<section class="col" id="decision">
+  <span class="eyebrow">Decision</span>
+  <h2 style="margin-top: 0.4rem;">Where this leaves me</h2>
+  <p>Round two didn't change the call. It made the on-demand option cheaper to build.</p>
+  <p>I'm not putting STE in <code>CLAUDE.md</code> or <code>AGENTS.md</code>. It helps one kind of reader. In exchange, every reply gets stiffer and slower, and Codex gets measurably worse. The one-line plain-language rule stays. If I write something specifically for second-language readers or for translation, I'll call an STE rewrite on that one document, and round two says that rewrite instruction can be one line that names the standard. It costs nothing on the days I don't use it.</p>
+  <p>On where a writing rule should live, the research was clear. If a rule ever needs to be always on, the global <code>CLAUDE.md</code> and Codex's <code>AGENTS.md</code> are the only place that reaches subagents, files and commit messages in both tools. An output style reaches only the main thread. A skill loads when the model decides it's relevant, which makes it a poor fit for "every reply" and a good fit for "this document".</p>
+</section>
+<div class="col tablewrap"><table class="data" id="matrix">
+  <thead><tr><th>Option</th><th>Quality</th><th>Facts, nuance</th><th>2nd-lang. ease</th><th>Natural</th><th>Cost, speed</th><th>Simple</th><th>Score</th></tr></thead>
+  <tbody>
+    <tr class="pick"><td><b>E.</b> Keep my rule, add an on-demand one-line STE rewrite</td><td>4</td><td>5</td><td>4</td><td>5</td><td>5</td><td>4</td><td class="w">4.45</td></tr>
+    <tr><td><b>A.</b> Keep my one-line rule</td><td>4</td><td>5</td><td>3</td><td>5</td><td>5</td><td>5</td><td class="w">4.45</td></tr>
+    <tr><td><b>C.</b> Scoped, always on, both tools</td><td>3.5</td><td>4</td><td>4</td><td>2</td><td>2</td><td>4</td><td>3.38</td></tr>
+    <tr><td><b>F.</b> Scoped, Claude only</td><td>3.5</td><td>4</td><td>4</td><td>2</td><td>2.5</td><td>3</td><td>3.30</td></tr>
+    <tr><td><b>B.</b> Lite, always on, both tools</td><td>3</td><td>3</td><td>5</td><td>2</td><td>2</td><td>4</td><td>3.20</td></tr>
+    <tr><td><b>G.</b> One line always on: <code>Speak only in ASD-STE100</code></td><td>2.5</td><td>2.5</td><td>5</td><td>1</td><td>1</td><td>5</td><td>2.88</td></tr>
+    <tr><td><b>D.</b> Full skill forced on</td><td>3</td><td>2.5</td><td>5</td><td>3</td><td>1</td><td>2</td><td>2.75</td></tr>
+  </tbody>
+</table>
+<p class="note">Scores 1 to 5 from the measured data. Weights: quality 25%, facts and nuance 20%, second-language ease 15%, naturalness 10%, cost and speed 15%, simplicity across both tools 15%. A and E tie on score; E wins because it adds a tool that costs nothing when unused.</p></div>
+
+<section class="col" id="limits">
+  <div class="limits">
+    <h2>What this doesn't show</h2>
+    <p>The judges are models. They agree only moderately (r = 0.45), and each rates its own family's replies higher. That's why I only lean on results both of them back. Round one ran each cell twice and round two three times, and two runs of the same setup differed by 0.56 to 0.76 points on average, so treat the per-task numbers in the viewers as hints. Round one ran on my setup and round two on bare CLIs, so only the metrics compare across them. Every reply was a single turn with no tools, and real sessions are mostly tool work. My baseline already had a plain-language rule, so this measures what STE adds on top of a decent setup. The reading quiz used a small model, and models read long sentences fine, so it's a weak stand-in for a person reading in a second language (it moved 2 to 7 points, inside the noise). No human has rated these replies yet.</p>
+  </div>
+</section>
+
+<section class="col receipts" id="receipts">
+  <h2>Receipts</h2>
+  <p>Everything behind this page is in <a href="https://github.com/Thakay/ste-eval">one repo</a>: the dataset, the rule files, all 224 replies, every judge verdict, and the harness that ran it. Generating the replies took 8 to 11 minutes per round, with the judging and quizzes running alongside.</p>
+  <ul class="files">
+    <li><b>dataset/tasks.json</b> the 8 tasks, checklists, quiz questions</li>
+    <li><b>arms/</b> the Lite, Scoped and Full rule files</li>
+    <li><b>runs/</b> every reply, with token usage and timing</li>
+    <li><b>scores/</b> judge verdicts, quiz grades, metrics, summary tables</li>
+    <li><b>harness/</b> run.py, judge.py, reader.py, metrics.py, analyze.py, analyze2.py</li>
+    <li><b>exp2/</b> round two: the one-line rule, its runs and scores (run with <code>STE_EXP=exp2</code>)</li>
+    <li><b>baseline/</b> the round one baseline: my global rule files and output style</li>
+  </ul>
+  <p>The two headless commands, per run, with the rule file dropped into the run folder:</p>
+  <pre>claude -p "$PROMPT" --model opus --effort xhigh --tools "" \
+  --strict-mcp-config --permission-mode dontAsk \
+  --no-session-persistence --output-format json
+
+codex exec -m gpt-6.1-sol -c model_reasoning_effort="xhigh" \
+  -c web_search="disabled" -c features.apps=false \
+  -c features.browser_use=false --sandbox read-only \
+  --skip-git-repo-check --ephemeral --json -o last.md "$PROMPT"
+
+# round two, bare: Claude adds --setting-sources project,local;
+# Codex runs with CODEX_HOME pointing at a folder that only links auth.json</pre>
+  <p><a href="https://github.com/Thakay/ste-eval">github.com/Thakay/ste-eval</a>. The README has the rerun steps for round two.</p>
+</section>
+</main>
+
+<footer class="col">Claude Opus 5.5 and Codex gpt-6.1-sol at xhigh effort. Round one: 8 tasks × 4 rule sets × 2 runs. Round two: 8 tasks × 2 setups × 3 runs.</footer>
+
+<script id="data" type="application/json">__DATA__</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script>
+__SCRIPT__
+</script>
+</body>
+</html>

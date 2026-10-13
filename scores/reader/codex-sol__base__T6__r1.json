@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "base",
+  "task": "T6",
+  "rep": 1,
+  "answers": [
+    "Not directly. The text says deleting branch references usually frees very little space.",
+    "uploads/tmp, which holds about 31 GB and is the main opportunity.",
+    "The production host and access method, the temporary-file lifecycle, the branch policy, and approval of the concrete deletion list after inspection."
+  ],
+  "scores": [
+    1,
+    0,
+    0
+  ]
+}

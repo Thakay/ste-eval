@@ -1,0 +1,16 @@
+{
+  "gen": "claude-opus",
+  "arm": "base",
+  "task": "T7",
+  "rep": 2,
+  "answers": [
+    "Each user comes back as an empty object {}, because the missing await makes users a Promise that res.json serializes as {}.",
+    "The size cap of 100 was removed, so a request like ?size=1000000 can load the whole users table in one call.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gen": "codex-sol",
+  "arm": "scoped",
+  "task": "T7",
+  "rep": 1,
+  "answers": [
+    "The response contains a promise instead of the resolved user array, typically producing users: {}, because db.users.findMany is no longer awaited.",
+    "The Math.min(..., 100) page-size limit was removed, so requests like ?size=1000000 pass straight to take.",
+    "Request changes."
+  ],
+  "scores": [
+    1,
+    1,
+    1
+  ]
+}

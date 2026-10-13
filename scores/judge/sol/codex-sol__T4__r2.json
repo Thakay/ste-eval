@@ -1,0 +1,115 @@
+{
+  "judge": "sol",
+  "gen": "codex-sol",
+  "task": "T4",
+  "rep": 2,
+  "label_to_arm": {
+    "A": "lite",
+    "B": "full",
+    "C": "base",
+    "D": "scoped"
+  },
+  "verdict": {
+    "answers": {
+      "A": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Leads with the merge blocker, preserves the evidence and uncertainty, and gives concrete verification steps."
+      },
+      "B": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 4,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "Covers the essential facts accurately, but places the merge blocker late and gives less explicit verification guidance."
+      },
+      "C": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 5,
+        "actionability": 5,
+        "nuance": 5,
+        "naturalness": 5,
+        "esl_ease": 5,
+        "overall": 9,
+        "note": "Clearly separates findings, candidate changes, and next steps, but does not explicitly preserve the concern that freezegun hides the bug."
+      },
+      "D": {
+        "checklist": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "invented": [],
+        "errors": [],
+        "clarity": 4,
+        "actionability": 4,
+        "nuance": 4,
+        "naturalness": 3,
+        "esl_ease": 5,
+        "overall": 8,
+        "note": "States the blocker first and preserves the facts, but the repeated waiting instructions make the next steps unnecessarily rigid."
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "B",
+      "D"
+    ]
+  },
+  "meta": {
+    "usage": {
+      "input_tokens": 12895,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 871,
+      "reasoning_output_tokens": 516
+    }
+  }
+}
