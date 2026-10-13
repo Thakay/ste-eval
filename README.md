@@ -3,7 +3,7 @@
 A popular tip says to make your coding agent write in ASD-STE100 Simplified Technical English (STE), the controlled English of aircraft maintenance manuals. This repo tests that on Claude Code (Claude Opus 5.5) and Codex (gpt-6.1-sol), both at xhigh effort. Over two rounds it collected 224 replies. Two blind judges from different model families scored every reply, a small model took a reading quiz on each one, and a script measured the STE rules directly.
 
 - **The write-up:** [ASD-STE100 and LLMs: the myth, the legend, and what the evals say](https://blog.thakay.dev/asd-ste100-and-llms/)
-- **Every reply side by side, with charts:** [the explorer](https://thakay.github.io/ste-eval/)
+- **Every reply side by side, with charts:** [the explorer](https://data.thakay.dev/ste-eval/)
 - **Full results, decision matrix and limits:** [REPORT.md](REPORT.md)
 
 ## Results in short
